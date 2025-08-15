@@ -1,17 +1,92 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Contruction site
-    </title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- tailwind css -->
-     <link rel="stylesheet" href="./assests/css/main.css">
-  </head>
-  <body>
-    <h1 class="text-red-500 bg-slate-400">Construction Site</h1>
-   
-  </body>
+  <title>STAR CONSTRUCTION
+  </title>
+
+  <!-- Icon Logo -->
+  <link rel="icon" type="image/png" href="./public/images/star-logo.png">
+  <!-- tailwind css -->
+  <link rel="stylesheet" href="./assests/css/main.css">
+
+</head>
+
+<body class="text-white">
+
+  <!-- Hero Section -->
+  <section id="hero" class="relative h-screen bg-cover bg-center"
+    style="background-image: url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&auto=format&fit=crop&q=60');">
+
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/50 z-0"></div>
+
+    <!-- Navbar -->
+    <nav class="absolute top-0 left-0 w-full z-20">
+      <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+        <!-- Logo -->
+        <div>
+          <img src="./public/images/star-logo.png" alt="Logo" class="h-10">
+        </div>
+        <!-- Links -->
+        <ul class="hidden md:flex space-x-6 font-medium">
+          <li><a href="#"
+              class="hover:text-orange-500 hover:border-b-2 hover:border-orange-500 pb-1 transition">Home</a></li>
+          <li><a href="#" class="hover:text-orange-500 hover:border-b-2 hover:border-orange-500 pb-1 transition">About
+              us</a></li>
+          <li><a href="#" class="hover:text-orange-500 hover:border-b-2 hover:border-orange-500 pb-1 transition">Joint
+              Venture</a></li>
+          <li><a href="#"
+              class="hover:text-orange-500 hover:border-b-2 hover:border-orange-500 pb-1 transition">Services</a></li>
+          <li><a href="#"
+              class="hover:text-orange-500 hover:border-b-2 hover:border-orange-500 pb-1 transition">Projects</a></li>
+          <li><a href="#"
+              class="hover:text-orange-500 hover:border-b-2 hover:border-orange-500 pb-1 transition">Careers</a></li>
+          <li><a href="#"
+              class="hover:text-orange-500 hover:border-b-2 hover:border-orange-500 pb-1 transition">Blog</a></li>
+          <li><a href="#"
+              class="hover:text-orange-500 hover:border-b-2 hover:border-orange-500 pb-1 transition">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="relative z-10 flex items-center justify-between max-w-7xl mx-auto h-full px-6">
+      <!-- Left Text -->
+      <div class="max-w-lg">
+        <p class="text-lg mb-2">We are one of the best building contractors in Chennai</p>
+        <h1 class="text-4xl font-bold leading-snug mb-6">
+          We provide construction services with 15 years warranty
+        </h1>
+        <div class="flex space-x-4">
+          <button class="px-5 py-3 border border-white rounded hover:bg-white hover:text-black transition">Our
+            Portfolio</button>
+          <button class="px-5 py-3 bg-orange-500 hover:bg-orange-600 rounded">Get Free Quote</button>
+        </div>
+      </div>
+
+      <!-- Right Form -->
+      <div class="bg-transparent w-full max-w-sm">
+        <form class="space-y-4">
+          <input type="text" placeholder="Name *" class="w-full p-3 rounded text-black" />
+          <input type="text" placeholder="Phone *" class="w-full p-3 rounded text-black" />
+          <input type="email" placeholder="E-mail *" class="w-full p-3 rounded text-black" />
+          <input type="text" placeholder="Location (We are operational in Chennai only) *"
+            class="w-full p-3 rounded text-black" />
+          <input type="text" placeholder="Enter your land area in sft. *" class="w-full p-3 rounded text-black" />
+          <textarea placeholder="Please explain your requirements" class="w-full p-3 rounded text-black"></textarea>
+          <button type="submit"
+            class="w-full bg-orange-500 hover:bg-orange-600 py-3 rounded font-semibold">Send</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+
+
 </html>
