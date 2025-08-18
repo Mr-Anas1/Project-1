@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction Cost Calculator - Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-content.active {
+            max-height: 1000px;
+            transition: max-height 0.3s ease-in;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold text-blue-600">ConstructPro</div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="text-gray-600 hover:text-blue-600">Home</a>
+                    <a href="about.html" class="text-gray-600 hover:text-blue-600">About</a>
+                    <a href="service.html" class="text-blue-600 font-semibold">Services</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Construction Cost Calculator</h1>
+            <p class="text-xl mb-8">Get instant estimates for your dream home construction</p>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Calculator Form -->
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <h2 class="text-2xl font-bold mb-6">House Construction Cost Calculator</h2>
+                    
+                    <!-- Construction Area -->
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Construction area in sq.ft</label>
+                        <div class="flex items-center border border-gray-300 rounded-lg">
+                            <input type="number" id="construction-area" value="0" min="0" max="10000" 
+                                   class="flex-1 px-4 py-3 border-0 rounded-l-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                            <div class="flex flex-col">
+                                <button onclick="incrementValue('construction-area')" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 border-l border-gray-300">
+                                    <i class="fas fa-chevron-up text-xs"></i>
+                                </button>
+                                <button onclick="decrementValue('construction-area')" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 border-l border-t border-gray-300">
+                                    <i class="fas fa-chevron-down text-xs"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1">Min: 0 - Max: 10000</p>
+                    </div>
+
+                    <!-- Package Selection -->
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Select construction Package</label>
+                        <div class="relative">
+                            <select id="package-select" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none appearance-none bg-white">
+                                <option value="">Select value</option>
+                                <option value="basic">Basic</option>
+                                <option value="standard" selected>Standard</option>
+                                <option value="advanced">Premium</option>
+                            </select>
+                            <i class="fas fa-chevron-down absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none"></i>
+                        </div>
+                    </div>
+
+                    <!-- Car Parking -->
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Car Parking area in square feet(optional)</label>
+                        <div class="flex items-center border border-gray-300 rounded-lg">
+                            <input type="number" id="car-parking" value="0" min="0" max="10000" 
+                                   class="flex-1 px-4 py-3 border-0 rounded-l-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                            <div class="flex flex-col">
+                                <button onclick="incrementValue('car-parking')" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 border-l border-gray-300">
+                                    <i class="fas fa-chevron-up text-xs"></i>
+                                </button>
+                                <button onclick="decrementValue('car-parking')" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 border-l border-t border-gray-300">
+                                    <i class="fas fa-chevron-down text-xs"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1">Min: 0 - Max: 10000</p>
+                        <p class="text-xs text-gray-500">car parking will be charged @Rs.1800/sft.approximately</p>
+                    </div>
+
+                    <!-- Underground Sump -->
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">How many litres of underground sump required ? (optional)</label>
+                        <div class="relative">
+                            <input type="range" id="sump-range" min="0" max="20000" value="0" 
+                                   class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider">
+                            <div class="flex justify-between text-xs text-gray-500 mt-1">
+                                <span>0</span>
+                                <span id="sump-value">0</span>
+                                <span>20000</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1">An average family of 4 will require minimum of 10,000 litres</p>
+                    </div>
+
+                    <!-- Waste Water Recycling -->
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">How many person waste water recycling tank required?(optional)</label>
+                        <div class="relative">
+                            <input type="range" id="recycling-range" min="0" max="10" value="0" 
+                                   class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider">
+                            <div class="flex justify-between text-xs text-gray-500 mt-1">
+                                <span>0</span>
+                                <span id="recycling-value">0</span>
+                                <span>10</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1">Waste water recycling tank is an alternative to septic tank. It recycle the waste water &recharges underground water table.</p>
+                    </div>
+
+                    <!-- Compound Wall -->
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">How much feet length compound wall do you require?(optional)</label>
+                        <div class="flex items-center border border-gray-300 rounded-lg">
+                            <input type="number" id="compound-wall" value="0" min="0" max="1000" 
+                                   class="flex-1 px-4 py-3 border-0 rounded-l-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                            <div class="flex flex-col">
+                                <button onclick="incrementValue('compound-wall')" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 border-l border-gray-300">
+                                    <i class="fas fa-chevron-up text-xs"></i>
+                                </button>
+                                <button onclick="decrementValue('compound-wall')" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 border-l border-t border-gray-300">
+                                    <i class="fas fa-chevron-down text-xs"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1">Min: 0 - Max: 1000</p>
+                        <p class="text-xs text-gray-500">If plot size is 40x30, compound wall length will be 40+40+30+30=140 feet</p>
+                    </div>
+
+                    <!-- Solar Power -->
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">How much solar power do you require? (optional)</label>
+                        <div class="relative">
+                            <input type="range" id="solar-range" min="0" max="10" value="1" 
+                                   class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider">
+                            <div class="flex justify-between text-xs text-gray-500 mt-1">
+                                <span>0</span>
+                                <span id="solar-value">1</span>
+                                <span>10</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1">A 3BHK home will require 2KW solar power to run fans, lights and television during the daytime</p>
+                    </div>
+                </div>
+
+                <!-- Summary Section -->
+                <div class="bg-white rounded-lg shadow-lg p-8 sticky top-8">
+                    <div class="border-b border-gray-200 pb-4 mb-4">
+                        <h3 class="text-xl font-bold">Total Summary</h3>
+                        <button onclick="toggleSummary()" class="float-right mt-1">
+                            <i id="summary-icon" class="fas fa-chevron-up text-gray-400"></i>
+                        </button>
+                    </div>
+                    
+                    <div id="summary-content">
+                        <div class="grid grid-cols-2 gap-4 text-sm font-medium text-gray-700 border-b border-gray-200 pb-2 mb-4">
+                            <div>Name</div>
+                            <div class="text-right">Total</div>
+                        </div>
+                        
+                        <div id="summary-items" class="space-y-3">
+                            <!-- Summary items will be populated here -->
+                        </div>
+                        
+                        <div class="border-t border-gray-200 pt-4 mt-4">
+                            <div class="flex justify-between items-center text-lg font-bold">
+                                <span>Total Cost:</span>
+                                <span id="grand-total" class="text-blue-600">₹ 75,000.00</span>
+                            </div>
+                        </div>
+                        
+                        <button onclick="submitCalculation()" class="w-full mt-6 bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 transition duration-300 font-semibold">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pricing Packages Info -->
+            <div class="mt-16">
+                <h2 class="text-3xl font-bold text-center mb-12">Our Construction Packages</h2>
+                <div class="grid md:grid-cols-3 gap-8" id="pricing-packages">
+                    <!-- Packages will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="calculator.js"></script>
+</body>
+</html>
