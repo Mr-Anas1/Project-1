@@ -6,8 +6,20 @@
 .hero-about3 {
   /* relative to this CSS file at assests/css/main.css */
   background-image: url("../images/about image/about image3.jpg");
+  /* default desktop alignment */
+  background-position: center;
 }
 .hero-cover-center {
   background-size: cover;
-  background-position: center;
+}
+
+/* Responsively shift the image so the left-side subject stays centered on small screens */
+@media (max-width: 1024px) { /* lg and below */
+  .hero-about3 { background-position: 35% center; }
+}
+@media (max-width: 768px) { /* md and below */
+  .hero-about3 { background-position: 28% center; }
+}
+@media (max-width: 640px) { /* sm and below */
+  .hero-about3 { background-position: 22% center; }
 }
