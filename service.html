@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Construction Cost Calculator - Services</title>
-    <link rel="icon" type="image/x-icon" href="/assests/images/favicon.ico">
-    <link rel="stylesheet" href="./assests/css/main.css">
+    <link rel="icon" type="image/x-icon" href="/assests/images/favicon.ico" />
+    <link rel="stylesheet" href="./assests/css/main.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -26,39 +26,102 @@
 
   <body class="bg-gray-50">
     <!-- Navbar (matching about page) -->
-    <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-300 px-4 md:px-[50px]">
-      <div class="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 py-3 md:py-4">
+    <nav
+      class="fixed top-0 left-0 w-full z-50 transition-all duration-300 px-4 md:px-[50px]"
+    >
+      <div
+        class="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 py-3 md:py-4"
+      >
         <!-- Logo -->
         <div>
           <a href="index.html#hero" aria-label="Go to Home">
-            <img src="assests/images/star-logo.png" alt="Logo" class="h-14">
+            <img src="assests/images/star-logo.png" alt="Logo" class="h-14" />
           </a>
         </div>
         <!-- Mobile Menu Button -->
-        <button id="menuToggle" class="md:hidden p-2 rounded focus:outline-none" aria-label="Toggle menu" aria-expanded="false">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        <button
+          id="menuToggle"
+          class="md:hidden p-2 rounded focus:outline-none"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-7 w-7"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
           </svg>
         </button>
         <!-- Links -->
         <ul class="hidden md:flex space-x-6 font-medium">
-          <li><a href="index.html" class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition">Home</a></li>
-          <li><a href="about.html" class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition">About us</a></li>
-          <li><a href="service.html" class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition">Services</a></li>
-          <li><a href="#" class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition">Contact</a></li>
-          <li><a href="#" class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition">Projects</a></li>
+          <li>
+            <a
+              href="index.html"
+              class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="about.html"
+              class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition"
+              >About us</a
+            >
+          </li>
+          <li>
+            <a
+              href="service.html"
+              class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition"
+              >Contact</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition"
+              >Projects</a
+            >
+          </li>
         </ul>
       </div>
     </nav>
 
     <!-- Mobile Menu -->
-    <div id="mobileMenu" class="md:hidden hidden fixed top-16 left-0 w-full bg-white text-black shadow z-40">
+    <div
+      id="mobileMenu"
+      class="md:hidden hidden fixed top-16 left-0 w-full bg-white text-black shadow z-40"
+    >
       <ul class="flex flex-col items-center py-4 space-y-4 font-medium">
-        <li><a href="index.html#hero" class="hover:text-yellow-400">Home</a></li>
+        <li>
+          <a href="index.html#hero" class="hover:text-yellow-400">Home</a>
+        </li>
         <li><a href="about.html" class="hover:text-yellow-400">About us</a></li>
-        <li><a href="service.html" class="hover:text-yellow-400">Services</a></li>
-        <li><a href="index.html#contact" class="hover:text-yellow-400">Contact</a></li>
-        <li><a href="index.html#project" class="hover:text-yellow-400">Projects</a></li>
+        <li>
+          <a href="service.html" class="hover:text-yellow-400">Services</a>
+        </li>
+        <li>
+          <a href="index.html#contact" class="hover:text-yellow-400">Contact</a>
+        </li>
+        <li>
+          <a href="index.html#project" class="hover:text-yellow-400"
+            >Projects</a
+          >
+        </li>
       </ul>
     </div>
 
@@ -346,58 +409,87 @@
 
     <!-- Footer -->
     <footer class="bg-[#1E1E1E] text-gray-300">
-        <div class="container mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-start gap-10 text-center md:text-left">
-            <!-- Contact Section -->
-            <div>
-                <h3 class="text-white font-bold text-xl mb-4">Contact</h3>
-                <p class="mb-4">
-                    2nd floor, 87a, 2nd Main Rd, above Zalya’s Closet, <br>
-                    Nolambur Phase II, Mogappair West, Chennai, Tamil Nadu – 600037
-                </p>
-                <p class="flex items-center gap-2 mb-2">
-                    <span class="text-orange-500 text-2xl">📞</span>
-                    <span class="font-semibold text-white">9524148599 | 8940853255 | 9843310185</span>
-                </p>
-                <p class="text-sm mb-4">Mon - Sat 10:00 am - 7:00 pm</p>
-                <p class="flex items-center gap-2 mb-4">
-                    <span class="text-orange-500 text-2xl">✉️</span>
-                    <a href="mailto:info@hireandbuild.com" class="hover:text-orange-400">
-                        info@StarConstruction.com
-                    </a>
-                </p>
-            </div>
-
-            <!-- Page Links -->
-            <div>
-                <h3 class="text-white font-bold text-xl mb-4 ">Page Links</h3>
-                <ul class="space-y-2">
-                  <li><a href="index.html#hero" class="hover:text-orange-400">Home</a></li>
-                  <li><a href="about.html" class="hover:text-orange-400">About us</a></li>
-                  <li><a href="index.html#service" class="hover:text-orange-400">Services</a></li>
-                  <li><a href="index.html#project" class="hover:text-orange-400">Projects</a></li>
-                  <li><a href="index.html#contact" class="hover:text-orange-400">Contact</a></li>
-                </ul>
-              </div>
-
-            <!-- Useful Links -->
-            <div>
-                <h3 class="text-white font-bold text-xl mb-4">Useful Links</h3>
-                <ul class="space-y-2">
-                    <li><a href="service.html" class="hover:text-orange-400">Cost Calculator</a></li>
-                </ul>
-            </div>
+      <div
+        class="container mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-start gap-10 text-center md:text-left"
+      >
+        <!-- Contact Section -->
+        <div>
+          <h3 class="text-white font-bold text-xl mb-4">Contact</h3>
+          <p class="mb-4">
+            2nd floor, 87a, 2nd Main Rd, above Zalya’s Closet, <br />
+            Nolambur Phase II, Mogappair West, Chennai, Tamil Nadu – 600037
+          </p>
+          <p class="flex items-center gap-2 mb-2">
+            <span class="text-orange-500 text-2xl">📞</span>
+            <span class="font-semibold text-white"
+              >9524148599 | 8940853255 | 9843310185</span
+            >
+          </p>
+          <p class="text-sm mb-4">Mon - Sat 10:00 am - 7:00 pm</p>
+          <p class="flex items-center gap-2 mb-4">
+            <span class="text-orange-500 text-2xl">✉️</span>
+            <a
+              href="mailto:info@hireandbuild.com"
+              class="hover:text-orange-400"
+            >
+              info@StarConstruction.com
+            </a>
+          </p>
         </div>
 
-        <!-- Copyright -->
-        <div class="text-center text-sm text-gray-400 py-4 border-t border-gray-700">
-            &copy; Copyright 2025 Star Construction. All rights reserved.
+        <!-- Page Links -->
+        <div>
+          <h3 class="text-white font-bold text-xl mb-4">Page Links</h3>
+          <ul class="space-y-2">
+            <li>
+              <a href="index.html#hero" class="hover:text-orange-400">Home</a>
+            </li>
+            <li>
+              <a href="about.html" class="hover:text-orange-400">About us</a>
+            </li>
+            <li>
+              <a href="index.html#service" class="hover:text-orange-400"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a href="index.html#project" class="hover:text-orange-400"
+                >Projects</a
+              >
+            </li>
+            <li>
+              <a href="index.html#contact" class="hover:text-orange-400"
+                >Contact</a
+              >
+            </li>
+          </ul>
         </div>
+
+        <!-- Useful Links -->
+        <div>
+          <h3 class="text-white font-bold text-xl mb-4">Useful Links</h3>
+          <ul class="space-y-2">
+            <li>
+              <a href="service.html" class="hover:text-orange-400"
+                >Cost Calculator</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div
+        class="text-center text-sm text-gray-400 py-4 border-t border-gray-700"
+      >
+        &copy; Copyright 2025 Star Construction. All rights reserved.
+      </div>
     </footer>
 
     <script src="calculator.js"></script>
     <script>
       // Navbar Scroll Effect (match index.html behavior)
-      window.addEventListener("scroll", function() {
+      window.addEventListener("scroll", function () {
         const navbar = document.querySelector("nav");
         if (window.scrollY > 50) {
           navbar.classList.add("bg-white", "shadow", "text-black");
@@ -417,7 +509,7 @@
           const expanded = menuToggle.getAttribute("aria-expanded") === "true";
           menuToggle.setAttribute("aria-expanded", String(!expanded));
         });
-        mobileMenu.querySelectorAll("a").forEach(a => {
+        mobileMenu.querySelectorAll("a").forEach((a) => {
           a.addEventListener("click", () => {
             mobileMenu.classList.add("hidden");
             menuToggle.setAttribute("aria-expanded", "false");
