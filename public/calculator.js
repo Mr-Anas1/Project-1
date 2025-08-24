@@ -124,7 +124,7 @@ const packages = {
       design: ["2D Floor Plan", "3D Elevation Design"],
       structure: [
         "Basement height: Upto 3 feet",
-        "Steel: ARS",
+        "Steel: ARS, Amman, Agni",
         "Aggregates: 20mm & 40mm",
         "Blocks: 6 inch for Exterior Wall & 4 inch for Interior Wall",
         "Bricks: 9 inch for Exterior Wall & 4.5 inch for Interior Wall",

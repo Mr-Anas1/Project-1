@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom hero background using local image (processed by Vite) */
+.hero-about3 {
+  /* relative to this CSS file at assests/css/main.css */
+  background-image: url("../images/about image/about image3.jpg");
+}
+.hero-cover-center {
+  background-size: cover;
+  background-position: center;
+}
