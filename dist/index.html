@@ -2,321 +2,526 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>STAR CONSTRUCTION</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STAR CONSTRUCTION</title>
 
-  <!-- Icon Logo -->
-  <link rel="icon" type="image/png" href="/Project-1/assets/star-logo-BQwT7lim.png">
-  <!-- Tailwind CSS -->
+    <!-- Icon Logo -->
+    <link rel="icon" type="image/png" href="/assets/star-logo-BQwT7lim.png">
+    <!-- Tailwind CSS -->
 
-  <style>
-    /* Hide scrollbar */
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
-    .no-scrollbar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-  </style>
-    <link rel="stylesheet" crossorigin href="/Project-1/assets/index-CLgx6Msc.css">
-  </head>
+    <style>
+        /* Hide scrollbar */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+  <link rel="stylesheet" crossorigin href="/assets/main-CiSOjn37.css">
+</head>
 
 <body class="text-white font-sans">
 
-  <!-- Hero Section -->
-  <section id="hero" class="relative h-screen bg-cover bg-center"
-    style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&auto=format&fit=crop&q=60');">
+    <!-- Hero Section -->
+    <section id="hero" class="relative h-screen bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&auto=format&fit=crop&q=60');">
 
-    <!-- Overlay -->
-    <div class="absolute inset-0 bg-black/40 z-0"></div>
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black/40 z-0"></div>
 
-    <!-- Navbar -->
-    <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
-      <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        <!-- Logo -->
-        <div>
-          <img src="/Project-1/assets/star-logo-BQwT7lim.png" alt="Logo" class="h-10">
-        </div>
-        <!-- Links -->
-        <ul class="hidden md:flex space-x-6 font-medium">
-          <li><a href="#" class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition">Home</a></li>
-          <li><a href="about.html" class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition">About us</a></li>
-          <li><a href="#" class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition">Joint Venture</a></li>
-          <li><a href="#" class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition">Services</a></li>
-          <li><a href="#" class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition">Projects</a></li>
-          <li><a href="#" class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition">Careers</a></li>
-          <li><a href="#" class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition">Blog</a></li>
-          <li><a href="#" class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
+        <!-- Navbar -->
+        <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-300 px-4 md:px-[50px]">
+            <div class="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 py-3 md:py-4">
+                <!-- Logo -->
+                <div>
+                    <a href="#hero" aria-label="Go to Home">
+                        <img src="/assets/star-logo-BQwT7lim.png" alt="Logo" class="h-14">
+                    </a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button id="menuToggle" class="md:hidden p-2 rounded focus:outline-none" aria-label="Toggle menu" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+                <!-- Links -->
+                <ul class="hidden md:flex space-x-6 font-medium">
+                    <li><a href="#hero" class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition">Home</a></li>
+                    <li><a href="about.html" class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition">About us</a></li>
+                    <li><a href="#service" class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition">Services</a></li>
+                    <li><a href="#contact" class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition">Contact</a></li>
+                    <li><a href="#project" class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition">Projects</a></li>
+                </ul>
+            </div>
+        </nav>
 
-    <!-- Hero Content -->
-    <div class="relative z-10 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto h-full px-6 pt-20">
-      <!-- Left Text -->
-      <div class="max-w-lg">
-        <p class="text-lg mb-2">We are one of the best building contractors in Chennai</p>
-        <h1 class="text-4xl font-bold leading-snug mb-6">
-          We provide construction services with 15 years warranty
-        </h1>
-        <div class="flex space-x-4">
-          <button class="px-5 py-3 border border-white rounded hover:bg-yellow-400 hover:text-black transition">Our Portfolio</button>
-          <button class="px-5 py-3 bg-blue-600 hover:bg-blue-700 rounded">Get Free Quote</button>
-        </div>
-      </div>
-
-      <!-- Right Form -->
-      <div class="bg-transparent w-full max-w-sm mt-8 md:mt-0">
-        <form class="space-y-4">
-          <input type="text" placeholder="Name *" class="w-full p-3 rounded text-black" />
-          <input type="text" placeholder="Phone *" class="w-full p-3 rounded text-black" />
-          <input type="email" placeholder="E-mail *" class="w-full p-3 rounded text-black" />
-          <input type="text" placeholder="Location (We are operational in Chennai only) *" class="w-full p-3 rounded text-black" />
-          <input type="text" placeholder="Enter your land area in sft. *" class="w-full p-3 rounded text-black" />
-          <textarea placeholder="Please explain your requirements" class="w-full p-3 rounded text-black"></textarea>
-          <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 py-3 rounded font-semibold">Send</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stats Section -->
-  <section class="bg-gray-50 py-10">
-    <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-      <div>
-        <div class="text-blue-600 text-4xl mb-2">📅</div>
-        <h3 class="text-2xl font-bold text-black">120+</h3>
-        <p class="text-gray-600">Projects</p>
-      </div>
-      <div>
-        <div class="text-blue-600 text-4xl mb-2">🎁</div>
-        <h3 class="text-2xl font-bold text-black">350+</h3>
-        <p class="text-gray-600">Quality Checks</p>
-      </div>
-      <div>
-        <div class="text-blue-600 text-4xl mb-2">🏅</div>
-        <h3 class="text-2xl font-bold text-black">1,000,000</h3>
-        <p class="text-gray-600">Sq.ft Completed</p>
-      </div>
-      <div>
-        <div class="text-blue-600 text-4xl mb-2">👤</div>
-        <h3 class="text-2xl font-bold text-black">15</h3>
-        <p class="text-gray-600">Years Warranty</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Client Satisfaction Story (Carousel) -->
-  <section class="bg-white py-12">
-    <div class="container mx-auto px-4">
-      <h2 class="text-center text-2xl font-bold text-blue-800 mb-8">Client Satisfaction Story</h2>
-
-      <div class="relative overflow-hidden">
-        <!-- Left Button -->
-        <button onclick="prevImage()" 
-          class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-yellow-400 text-white p-3 rounded-full shadow-lg hover:bg-yellow-500 z-10">
-          &#10094;
-        </button>
-
-        <!-- Images -->
-        <div id="carousel" class="flex transition-transform duration-500">
-          <img src="https://images.unsplash.com/photo-1442265367415-27e484dcdceb?w=900" class="w-1/3 h-64 object-cover rounded-lg mx-2">
-          <img src="https://images.unsplash.com/photo-1470181942237-78ce33fec141?w=900" class="w-1/3 h-64 object-cover rounded-lg mx-2">
-          <img src="https://images.unsplash.com/photo-1496120005468-ab3ddc9991dd?w=900" class="w-1/3 h-64 object-cover rounded-lg mx-2">
-          <img src="https://images.unsplash.com/photo-1507941097613-9f2157b69235?w=900" class="w-1/3 h-64 object-cover rounded-lg mx-2">
-          <img src="https://images.unsplash.com/photo-1507298610305-92bf6b69aaef?w=900" class="w-1/3 h-64 object-cover rounded-lg mx-2">
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="md:hidden hidden fixed top-16 left-0 w-full bg-white text-black shadow z-40">
+            <ul class="flex flex-col items-center py-4 space-y-4 font-medium">
+                <li><a href="#hero" class="hover:text-yellow-400">Home</a></li>
+                <li><a href="about.html" class="hover:text-yellow-400">About us</a></li>
+                <li><a href="#service" class="hover:text-yellow-400">Services</a></li>
+                <li><a href="#contact" class="hover:text-yellow-400">Contact</a></li>
+                <li><a href="#project" class="hover:text-yellow-400">Projects</a></li>
+            </ul>
         </div>
 
-        <!-- Right Button -->
-        <button onclick="nextImage()" 
-          class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-yellow-400 text-white p-3 rounded-full shadow-lg hover:bg-yellow-500 z-10">
-          &#10095;
-        </button>
-      </div>
-    </div>
-  </section>
+        <!-- Hero Content -->
+        <div id="hero" class="relative z-10 flex flex-col md:flex-row items-center justify-around max-w-7xl mx-auto h-full px-6 pt-20">
+            <!-- Left Text -->
+            <div class="max-w-lg">
+                <p class="text-lg mb-2">We are one of the best building contractors in Town</p>
+                <h1 class="text-4xl font-bold leading-snug mb-6">
+                    We provide construction services with 15 years <br>Trust
+                </h1>
+                <div class="flex space-x-4">
+                    <button onclick="window.location.href='#project'" class="px-5 py-3 border border-white rounded hover:bg-yellow-400 hover:text-black transition">Our Projects</button>
+                    <button onclick="window.location.href='service.html'" class="px-5 py-3 bg-blue-600 hover:bg-blue-700 rounded">Get Free Quote</button>
+                </div>
+            </div>
 
-  <!-- Contact Section -->
-  <section class="bg-black text-white py-12">
-    <h2 class="text-center text-2xl md:text-3xl font-semibold">Contact Us For Your Free Consultation</h2>
-    <div class="flex justify-center items-center h-ful m-9">
-      <button class="px-5 py-3 bg-blue-600 hover:bg-blue-700 rounded">
-        Get Free Quote
-      </button>
-    </div>
-    <h2 class="text-center text-2xl md:text-3xl font-semibold">Or Give Us a Call +91 72004 72008</h2>
-  </section>
-
-  <!-- Our Projects Carousel -->
-  <section class="bg-white py-12">
-    <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-6 text-black">Our Projects</h2>
-
-      <div class="relative w-full max-w-5xl mx-auto overflow-hidden rounded-lg shadow-lg">
-        <div id="projectsCarousel" class="flex transition-transform duration-500 ease-in-out">
-          <img src="project1.jpg" class="w-full flex-shrink-0" alt="Project 1">
-          <img src="project2.jpg" class="w-full flex-shrink-0" alt="Project 2">
-          <img src="project3.jpg" class="w-full flex-shrink-0" alt="Project 3">
-          <img src="project4.jpg" class="w-full flex-shrink-0" alt="Project 4">
+            <!-- Right Form -->
+            <div class="w-full max-w-sm mt-8 md:mt-0">
+                <div class="bg-white/90 backdrop-blur-sm rounded-xl p-6 text-black shadow-lg">
+                    <h3 class="text-xl font-semibold mb-3 text-gray-900">Get in touch instantly</h3>
+                    <p class="text-sm text-gray-700 mb-5">Skip the form — contact us directly.</p>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <a href="https://wa.me/919524148599?text=Hi%20Star%20Construction%2C%20I%27d%20like%20a%20free%20consultation." target="_blank" rel="noopener" class="flex-1 inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white py-3 rounded-md font-medium">
+                            <span>WhatsApp</span>
+                        </a>
+                        <a href="tel:+919524148599" class="flex-1 inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-md font-medium">
+                            <span>Call us</span>
+                        </a>
+                    </div>
+                    <ul class="mt-5 space-y-1 text-sm text-gray-700">
+                        <li>• 15 Years Warranty</li>
+                        <li>• 1,000,000+ sq.ft completed</li>
+                        <li>• Chennai service area</li>
+                    </ul>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <button onclick="prevProject()" 
-          class="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-700 text-white p-3 rounded-full hover:bg-gray-900">
-          &#10094;
-        </button>
-        <button onclick="nextProject()" 
-          class="absolute right-0 top-1/2 -translate-y-1/2 bg-gray-700 text-white p-3 rounded-full hover:bg-gray-900">
-          &#10095;
-        </button>
-      </div>
-    </div>
-  </section>
+    <!-- Stats Section -->
+    <section class="bg-gray-50 py-16">
+        <div class="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <div class="text-blue-600 text-4xl mb-2">📅</div>
+                <h3 class="text-2xl font-bold text-black">120+</h3>
+                <p class="text-gray-600">Projects</p>
+            </div>
+            <div>
+                <div class="text-blue-600 text-4xl mb-2">🎁</div>
+                <h3 class="text-2xl font-bold text-black">350+</h3>
+                <p class="text-gray-600">Quality Checks</p>
+            </div>
+            <div>
+                <div class="text-blue-600 text-4xl mb-2">🏅</div>
+                <h3 class="text-2xl font-bold text-black">1,000,000</h3>
+                <p class="text-gray-600">Sq.ft Completed</p>
+            </div>
+            <div>
+                <div class="text-blue-600 text-4xl mb-2">👤</div>
+                <h3 class="text-2xl font-bold text-black">15</h3>
+                <p class="text-gray-600">Years Warranty</p>
+            </div>
+        </div>
+    </section>
+    <!-- Service Section -->
+    <section id="service" class="bg-gray-50 py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-center text-3xl font-bold text-blue-800 mb-10">Services</h2>
+            <!-- Service Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 text-center">
+                    <!-- <img src="" alt=""> -->
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">House Construction</h3>
+                        <p class="text-gray-600">From foundation to finishing, we build durable and stylish homes designed for your comfort and lifestyle.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 text-center">
+                    <!-- <img src="" alt=""> -->
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Renovation & Remodeling</h3>
+                        <p class="text-gray-600">Upgrade your old spaces with modern designs, stronger structures, and fresh interiors.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 text-center">
+                    <!-- <img src="" alt=""> -->
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Interior & Exterior Design</h3>
+                        <p class="text-gray-600">Stylish, functional, and long-lasting designs that enhance both beauty and usability.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Calculation Section -->
+            <div class="text-center mt-12">
+                <p class="text-gray-700 mb-4">Want to know how much your dream project will cost?</p>
+                <button onclick="window.location.href='service.html'" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition">
+                    Get Construction Estimate
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- Product Section -->
+    <section class="Production py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-blue-800 mb-10">Our Products</h2>
 
-  <!-- Vendors and Banking Partners -->
-  <section class="bg-white py-12">
-    <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-8 text-black">Our Vendors</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 items-center justify-center">
-        <img src="vendor1.png" alt="Vendor 1" class="mx-auto h-16">
-        <img src="vendor2.png" alt="Vendor 2" class="mx-auto h-16">
-        <img src="vendor3.png" alt="Vendor 3" class="mx-auto h-16">
-        <img src="vendor4.png" alt="Vendor 4" class="mx-auto h-16">
-      </div>
+            <!-- Product Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 place-items-center">
+                <!-- Single Product -->
+                <div class="bg-white rounded-2xl shadow-md p-4 hover:shadow-xl transition w-full max-w-sm">
+                    <img src="/assets/product-CXggZWg2.jpg" alt="Product 1" class="rounded-lg mb-4 w-full object-cover aspect-[4/3]">
+                </div>
 
-      <h2 class="text-3xl font-bold my-10 text-black">Our Banking Partners</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 items-center justify-center">
-        <img src="bank1.png" alt="Bank 1" class="mx-auto h-16">
-        <img src="bank2.png" alt="Bank 2" class="mx-auto h-16">
-        <img src="bank3.png" alt="Bank 3" class="mx-auto h-16">
-        <img src="bank4.png" alt="Bank 4" class="mx-auto h-16">
-      </div>
-    </div>
-  </section>
+                <!-- Repeat Product -->
+                <div class="bg-white rounded-2xl shadow-md p-4 hover:shadow-xl transition w-full max-w-sm">
+                    <img src="/assets/Product1-DVguvMdW.jpg" alt="Product 2" class="rounded-lg mb-4 w-full object-cover aspect-[4/3]">
+                </div>
 
-  <!-- Footer -->
-<footer class="bg-[#1E1E1E] text-gray-300">
-  <div class="container mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
-    
+                <!-- Repeat Product -->
+                <div class="bg-white rounded-2xl shadow-md p-4 hover:shadow-xl transition w-full max-w-sm">
+                    <img src="/assets/product2-B4nFVAxQ.jpg" alt="Product 3" class="rounded-lg mb-4 w-full object-cover aspect-[4/3]">
+                </div>
+
+            </div>
+
+            <!-- Business Info -->
+            <div class="mt-12 bg-white shadow-md rounded-2xl p-6 text-center">
+                <h3 class="text-2xl font-semibold text-blue-800 mb-4">Available in Offline</h3>
+                <ul class="text-gray-700 space-y-2 mb-6">
+                    <li>1: Power tools sales & rental</li>
+                    <li>2: Centring material rental</li>
+                    <li>3: Demolition work, core cutting and <br>concrete cutting work</li>
+                </ul>
+                <p class="text-gray-800 font-medium">Proprietor: <span class="font-bold">M. Mohamed Azath Ali</span></p>
+                <p class="text-gray-600">Valiyar Street, Porayar</p>
+            </div>
+
+
+        </div>
+    </section>
+
+
+    <!-- Client Satisfaction Story (Carousel) -->
+    <section class="bg-white py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-center text-2xl font-bold text-blue-800 mb-8">
+                Client Satisfaction Story
+            </h2>
+
+            <div id="testimonialViewport" class="relative overflow-hidden">
+                <!-- Left Button -->
+                <button onclick="prevTestimonial()" aria-label="Previous testimonial" class="absolute left-2 top-1/2 -translate-y-1/2 bg-gray-700/80 hover:bg-gray-900 text-white p-2 md:p-3 rounded-full shadow-lg z-10">
+                    &#10094;
+                </button>
+
+                <!-- Carousel Wrapper -->
+                <div id="carousel" class="flex transition-transform duration-500 ease-in-out">
+                    <!-- Review 1 -->
+                    <div class="flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.333%] bg-gray-100 text-black rounded-lg p-6 mx-2 shadow">
+                        <p class="italic">
+                            "Star Construction built my house on time with excellent quality.
+                            Truly reliable!"
+                        </p>
+                        <div class="flex items-center mt-4">
+                            <img src="/assets/Minimalist%20Profile%20Icon%20Design-DXA98sXi.png" class="w-12 h-12 rounded-full mr-3" />
+                            <div>
+                                <h4 class="font-semibold">Arun Kumar</h4>
+                                <p class="text-sm text-gray-600">Chennai</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.333%] bg-gray-100 text-black rounded-lg p-6 mx-2 shadow">
+                        <p class="italic">
+                            "Very professional team. They completed our office project smoothly
+                            and quickly."
+                        </p>
+                        <div class="flex items-center mt-4">
+                            <img src="/assets/Minimalist%20Profile%20Icon%20Design-DXA98sXi.png" class="w-12 h-12 rounded-full mr-3" />
+                            <div>
+                                <h4 class="font-semibold">Priya S</h4>
+                                <p class="text-sm text-gray-600">Anna Nagar</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.333%] bg-gray-100 text-black rounded-lg p-6 mx-2 shadow">
+                        <p class="italic">
+                            "Affordable, trustworthy, and great quality. They kept us updated
+                            throughout."
+                        </p>
+                        <div class="flex items-center mt-4">
+                            <img src="/assets/Minimalist%20Profile%20Icon%20Design-DXA98sXi.png" class="w-12 h-12 rounded-full mr-3" />
+                            <div>
+                                <h4 class="font-semibold">Ramesh B</h4>
+                                <p class="text-sm text-gray-600">Velachery</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 4 -->
+                    <div class="flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.333%] bg-gray-100 text-black rounded-lg p-6 mx-2 shadow">
+                        <p class="italic">
+                            "Star Construction built my house on time with excellent quality.
+                            Truly reliable!"
+                        </p>
+                        <div class="flex items-center mt-4">
+                            <img src="/assets/Minimalist%20Profile%20Icon%20Design-DXA98sXi.png" class="w-12 h-12 rounded-full mr-3" />
+                            <div>
+                                <h4 class="font-semibold">Arun Kumar</h4>
+                                <p class="text-sm text-gray-600">Chennai</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Button -->
+                <button onclick="nextTestimonial()" aria-label="Next testimonial" class="absolute right-2 top-1/2 -translate-y-1/2 bg-gray-700/80 hover:bg-gray-900 text-white p-2 md:p-3 rounded-full shadow-lg z-10">
+                    &#10095;
+                </button>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
-    <div>
-      <h3 class="text-white font-bold text-xl mb-4">Contact</h3>
-      <p class="mb-4">
-        2nd floor, 87a, 2nd Main Rd, above Zalya’s Closet, <br>
-        Nolambur Phase II, Mogappair West, Chennai, Tamil Nadu – 600037
-      </p>
-      <p class="flex items-center gap-2 mb-2">
-        <span class="text-orange-500 text-2xl">📞</span>
-        <span class="font-semibold text-white">+91 72004 72008</span>
-      </p>
-      <p class="text-sm mb-4">Mon - Sat 10:00 am - 7:00 pm</p>
-      <p class="flex items-center gap-2 mb-4">
-        <span class="text-orange-500 text-2xl">✉️</span>
-        <a href="mailto:info@hireandbuild.com" class="hover:text-orange-400">
-          info@hireandbuild.com
-        </a>
-      </p>
-      
-      <!-- Social Icons -->
-      <div class="flex space-x-4 text-2xl">
-        <a href="#" class="hover:text-orange-400">🌐</a>
-        <a href="#" class="hover:text-orange-400">📸</a>
-        <a href="#" class="hover:text-orange-400">💼</a>
-        <a href="#" class="hover:text-orange-400">▶️</a>
-        <a href="#" class="hover:text-orange-400">❓</a>
-        <a href="#" class="hover:text-orange-400">❌</a>
-      </div>
-    </div>
+    <section id="contact" class="bg-black text-white py-16">
+        <h2 class="text-center text-2xl md:text-3xl font-semibold">Contact Us For Your Free Consultation</h2>
+        <div class="flex justify-center items-center my-9">
+            <button onclick="window.location.href='service.html'" class="px-5 py-3 bg-blue-600 hover:bg-blue-700 rounded">
+                Get Free Quote
+            </button>
+        </div>
+        <h2 class="text-center text-2xl md:text-3xl font-semibold">Or Give Us a Call +91 9524148599</h2>
+    </section>
 
-    <!-- Page Links -->
-    <div>
-      <h3 class="text-white font-bold text-xl mb-4 ">Page Links</h3>
-      <ul class="space-y-2">
-        <li><a href="#" class="hover:text-orange-400">Home</a></li>
-        <li><a href="#" class="hover:text-orange-400">About us</a></li>
-        <li><a href="#" class="hover:text-orange-400">Joint Venture</a></li>
-        <li><a href="#" class="hover:text-orange-400">Services</a></li>
-        <li><a href="#" class="hover:text-orange-400">Projects</a></li>
-        <li><a href="#" class="hover:text-orange-400">Careers</a></li>
-        <li><a href="#" class="hover:text-orange-400">Blog</a></li>
-        <li><a href="#" class="hover:text-orange-400">Contact</a></li>
-      </ul>
-    </div>
+    <!-- Our Projects Carousel -->
+    <section id="project" class="bg-white py-16">
+        <div class="container mx-auto text-center px-6">
+            <h2 class="text-3xl font-bold mb-6 text-black">Our Projects</h2>
 
-    <!-- Useful Links -->
-    <div>
-      <h3 class="text-white font-bold text-xl mb-4">Useful Links</h3>
-      <ul class="space-y-2">
-        <li><a href="#" class="hover:text-orange-400">Cost Calculator</a></li>
-        <li><a href="#" class="hover:text-orange-400">Building Construction</a></li>
-        <li><a href="#" class="hover:text-orange-400">Knowledge Center</a></li>
-        <li><a href="#" class="hover:text-orange-400">Join as a Contractor</a></li>
-      </ul>
-    </div>
-  </div>
+            <div id="projectsViewport" class="relative w-full max-w-5xl mx-auto overflow-hidden rounded-lg shadow-lg">
+                <div id="projectsCarousel" class="flex transition-transform duration-500 ease-in-out">
+                    <img src="/assets/Project%20-1-n3cgkRFF.jpg" class="min-w-full h-64 md:h-96 object-cover" alt="Project 1">
+                    <img src="/assets/Project%202-CR0FoYGq.jpg" class="min-w-full h-64 md:h-96 object-cover" alt="Project 2">
+                    <img src="/assets/Project%203-Dt5T7Uno.jpg" class="min-w-full h-64 md:h-96 object-cover" alt="Project 3">
+                    <img src="/assets/Project%204-CNkYjIcN.jpg" class="min-w-full h-64 md:h-96 object-cover" alt="Project 4">
+                    <img src="/assets/Project%204-CNkYjIcN.jpg" class="min-w-full h-64 md:h-96 object-cover" alt="Project 4">
+                    <img src="/assets/Project%206-B2ITzGGY.jpg" class="min-w-full h-64 md:h-96 object-cover" alt="Project 6">
+                    <img src="/assets/Project%207-DPmX5q28.jpg" class="min-w-full h-64 md:h-96 object-cover" alt="Project 7">
+                    <img src="/assets/Project%208-DFFXFJxY.jpg" class="min-w-full h-64 md:h-96 object-cover" alt="Project 8">
+                    <img src="/assets/Project%209-Bf_puw6s.jpg" class="min-w-full h-64 md:h-96 object-cover" alt="Project 9">
+                    <img src="/assets/Project%2010-BJW024AV.jpg" class="min-w-full h-64 md:h-96 object-cover" alt="Project 10">
+                </div>
 
-  <!-- Copyright -->
-  <div class="text-center text-sm text-gray-400 py-4 border-t border-gray-700">
-    © Copyright 2024 Hireandbuild, Chennai. All rights reserved.
-  </div>
-</footer>
+                <button onclick="prevProject()" class="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-700 text-white p-3 rounded-full hover:bg-gray-900">
+                    &#10094;
+                </button>
+                <button onclick="nextProject()" class="absolute right-0 top-1/2 -translate-y-1/2 bg-gray-700 text-white p-3 rounded-full hover:bg-gray-900">
+                    &#10095;
+                </button>
+            </div>
+        </div>
+    </section>
 
-  <!-- JavaScript -->
-  <script>
-    // Navbar Scroll Effect
-    window.addEventListener("scroll", function() {
-      const navbar = document.querySelector("nav");
-      if (window.scrollY > 50) {
-        navbar.classList.add("bg-white", "shadow", "text-black");
-        navbar.classList.remove("bg-transparent", "text-white");
-      } else {
-        navbar.classList.remove("bg-white", "shadow", "text-black");
-        navbar.classList.add("bg-transparent", "text-white");
-      }
-    });
+    <!-- Footer -->
+    <footer class="bg-[#1E1E1E] text-gray-300">
+        <div class="container mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-start gap-10 text-center md:text-left">
 
-    // Client Satisfaction Carousel
-    const carousel = document.getElementById("carousel");
-    const images = carousel.children;
-    let index = 0;
-    function showImages() {
-      carousel.style.transform = `translateX(-${index * 33.33}%)`;
-    }
-    function nextImage() {
-      index = (index + 1) % images.length;
-      showImages();
-    }
-    function prevImage() {
-      index = (index - 1 + images.length) % images.length;
-      showImages();
-    }
+            <!-- Contact Section -->
+            <div>
+                <h3 class="text-white font-bold text-xl mb-4">Contact</h3>
+                <p class="mb-4">
+                    2nd floor, 87a, 2nd Main Rd, above Zalya’s Closet, <br>
+                    Nolambur Phase II, Mogappair West, Chennai, Tamil Nadu – 600037
+                </p>
+                <p class="flex items-center gap-2 mb-2">
+                    <span class="text-orange-500 text-2xl">📞</span>
+                    <span class="font-semibold text-white">9524148599 | 8940853255 | 9843310185</span>
+                </p>
+                <p class="text-sm mb-4">Mon - Sat 10:00 am - 7:00 pm</p>
+                <p class="flex items-center gap-2 mb-4">
+                    <span class="text-orange-500 text-2xl">✉️</span>
+                    <a href="mailto:info@hireandbuild.com" class="hover:text-orange-400">
+                        info@StarConstruction.com
+                    </a>
+                </p>
 
-    // Projects Carousel
-    const projectsCarousel = document.getElementById("projectsCarousel");
-    let projectIndex = 0;
-    function showProjects() {
-      const width = projectsCarousel.clientWidth;
-      projectsCarousel.style.transform = `translateX(-${projectIndex * width}px)`;
-    }
-    function nextProject() {
-      if (projectIndex < projectsCarousel.children.length - 1) {
-        projectIndex++;
-      } else {
-        projectIndex = 0;
-      }
-      showProjects();
-    }
-    function prevProject() {
-      if (projectIndex > 0) {
-        projectIndex--;
-      } else {
-        projectIndex = projectsCarousel.children.length - 1;
-      }
-      showProjects();
-    }
-    window.addEventListener("resize", showProjects);
-  </script>
+                <!-- Social Icons -->
+                <!-- <div class="flex space-x-4 text-2xl">
+                    <a href="#" class="hover:text-orange-400">🌐</a>
+                    <a href="#" class="hover:text-orange-400">📸</a>
+                    <a href="#" class="hover:text-orange-400">💼</a>
+                    <a href="#" class="hover:text-orange-400">▶️</a>
+                    <a href="#" class="hover:text-orange-400">❓</a>
+                    <a href="#" class="hover:text-orange-400">❌</a>
+                </div> -->
+            </div>
+
+            <!-- Page Links -->
+            <div>
+                <h3 class="text-white font-bold text-xl mb-4 ">Page Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="#hero" class="hover:text-orange-400">Home</a></li>
+                    <li><a href="about.html" class="hover:text-orange-400">About us</a></li>
+                    <li><a href="#service" class="hover:text-orange-400">Services</a></li>
+                    <li><a href="#project" class="hover:text-orange-400">Projects</a></li>
+                    <li><a href="#contact" class="hover:text-orange-400">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Useful Links -->
+            <div>
+                <h3 class="text-white font-bold text-xl mb-4">Useful Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="service.html" class="hover:text-orange-400">Cost Calculator</a></li>
+                    <!-- <li><a href="#" class="hover:text-orange-400">Building Construction</a></li>
+                    <li><a href="#" class="hover:text-orange-400">Knowledge Center</a></li>
+                    <li><a href="#" class="hover:text-orange-400">Join as a Contractor</a></li> -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-center text-sm text-gray-400 py-4 border-t border-gray-700">
+            &copy; Copyright 2025 Star Construction. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Navbar Scroll Effect
+        window.addEventListener("scroll", function() {
+            const navbar = document.querySelector("nav");
+            if (window.scrollY > 50) {
+                navbar.classList.add("bg-white", "shadow", "text-black");
+                navbar.classList.remove("bg-transparent", "text-white");
+            } else {
+                navbar.classList.remove("bg-white", "shadow", "text-black");
+                navbar.classList.add("bg-transparent", "text-white");
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById("menuToggle");
+        const mobileMenu = document.getElementById("mobileMenu");
+        if (menuToggle && mobileMenu) {
+            menuToggle.addEventListener("click", () => {
+                mobileMenu.classList.toggle("hidden");
+                const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+                menuToggle.setAttribute("aria-expanded", String(!expanded));
+            });
+            mobileMenu.querySelectorAll("a").forEach(a => {
+                a.addEventListener("click", () => {
+                    mobileMenu.classList.add("hidden");
+                    menuToggle.setAttribute("aria-expanded", "false");
+                });
+            });
+        }
+
+        // Client Satisfaction Carousel
+        const testimonialViewport = document.getElementById("testimonialViewport");
+        const carousel = document.getElementById("carousel");
+        const testimonialSlides = Array.from(carousel ? carousel.children : []);
+        let testimonialIndex = 0;
+        let testimonialItemsPerView = getItemsPerView();
+
+        function getItemsPerView() {
+            if (window.innerWidth >= 1024) return 3; // lg
+            if (window.innerWidth >= 768) return 2;  // md
+            return 1;                                // sm
+        }
+
+        function getSlideWidth() {
+            const first = testimonialSlides[0];
+            if (!first) return 0;
+            const rect = first.getBoundingClientRect();
+            const style = window.getComputedStyle(first);
+            const margin = parseFloat(style.marginLeft) + parseFloat(style.marginRight);
+            return rect.width + margin;
+        }
+
+        function clampTestimonialIndex() {
+            const max = Math.max(0, testimonialSlides.length - testimonialItemsPerView);
+            if (testimonialIndex > max) testimonialIndex = max;
+            if (testimonialIndex < 0) testimonialIndex = 0;
+        }
+
+        function showTestimonials() {
+            if (!carousel) return;
+            const slideWidth = getSlideWidth();
+            clampTestimonialIndex();
+            carousel.style.transform = `translateX(-${testimonialIndex * slideWidth}px)`;
+        }
+
+        function recalcTestimonials() {
+            testimonialItemsPerView = getItemsPerView();
+            showTestimonials();
+        }
+
+        function nextTestimonial() {
+            const max = Math.max(0, testimonialSlides.length - testimonialItemsPerView);
+            testimonialIndex = testimonialIndex >= max ? 0 : testimonialIndex + 1;
+            showTestimonials();
+        }
+
+        function prevTestimonial() {
+            const max = Math.max(0, testimonialSlides.length - testimonialItemsPerView);
+            testimonialIndex = testimonialIndex <= 0 ? max : testimonialIndex - 1;
+            showTestimonials();
+        }
+
+        // Initialize carousel positioning
+        showTestimonials();
+        window.addEventListener("resize", recalcTestimonials);
+
+        // Autoplay with hover pause
+        let testimonialTimer = setInterval(nextTestimonial, 5000);
+        if (testimonialViewport) {
+            testimonialViewport.addEventListener("mouseenter", () => {
+                clearInterval(testimonialTimer);
+            });
+            testimonialViewport.addEventListener("mouseleave", () => {
+                testimonialTimer = setInterval(nextTestimonial, 5000);
+            });
+        }
+        // Projects Carousel
+        const projectsCarousel = document.getElementById("projectsCarousel");
+        let projectIndex = 0;
+
+        function showProjects() {
+            const width = projectsCarousel.clientWidth;
+            projectsCarousel.style.transform = `translateX(-${projectIndex * width}px)`;
+        }
+
+        function nextProject() {
+            if (projectIndex < projectsCarousel.children.length - 1) {
+                projectIndex++;
+            } else {
+                projectIndex = 0;
+            }
+            showProjects();
+        }
+
+        function prevProject() {
+            if (projectIndex > 0) {
+                projectIndex--;
+            } else {
+                projectIndex = projectsCarousel.children.length - 1;
+            }
+            showProjects();
+        }
+        window.addEventListener("resize", showProjects);
+    </script>
 </body>
 
 </html>
