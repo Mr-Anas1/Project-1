@@ -33,12 +33,20 @@
         <div class="absolute inset-0 bg-black/40 z-0"></div>
 
         <!-- Navbar -->
-        <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-300  px-[50px]">
-            <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+        <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-300 px-4 md:px-[50px]">
+            <div class="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 py-3 md:py-4">
                 <!-- Logo -->
                 <div>
-                    <img src="./public/images/star-logo.png" alt="Logo" class="h-14">
+                    <a href="#hero" aria-label="Go to Home">
+                        <img src="./public/images/star-logo.png" alt="Logo" class="h-14">
+                    </a>
                 </div>
+                <!-- Mobile Menu Button -->
+                <button id="menuToggle" class="md:hidden p-2 rounded focus:outline-none" aria-label="Toggle menu" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
                 <!-- Links -->
                 <ul class="hidden md:flex space-x-6 font-medium">
                     <li><a href="#hero" class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition">Home</a></li>
@@ -49,6 +57,17 @@
                 </ul>
             </div>
         </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="md:hidden hidden fixed top-16 left-0 w-full bg-white text-black shadow z-40">
+            <ul class="flex flex-col items-center py-4 space-y-4 font-medium">
+                <li><a href="#hero" class="hover:text-yellow-400">Home</a></li>
+                <li><a href="about.html" class="hover:text-yellow-400">About us</a></li>
+                <li><a href="#service" class="hover:text-yellow-400">Services</a></li>
+                <li><a href="#contact" class="hover:text-yellow-400">Contact</a></li>
+                <li><a href="#project" class="hover:text-yellow-400">Projects</a></li>
+            </ul>
+        </div>
 
         <!-- Hero Content -->
         <div id="hero" class="relative z-10 flex flex-col md:flex-row items-center justify-around max-w-7xl mx-auto h-full px-6 pt-20">
@@ -65,23 +84,31 @@
             </div>
 
             <!-- Right Form -->
-            <div class="bg-transparent w-full max-w-sm mt-8 md:mt-0">
-                <form class="space-y-4">
-                    <input type="text" placeholder="Name *" class="w-full p-3 rounded text-black" />
-                    <input type="text" placeholder="Phone *" class="w-full p-3 rounded text-black" />
-                    <input type="email" placeholder="E-mail *" class="w-full p-3 rounded text-black" />
-                    <input type="text" placeholder="Location (We are operational in Chennai only) *" class="w-full p-3 rounded text-black" />
-                    <input type="text" placeholder="Enter your land area in sft. *" class="w-full p-3 rounded text-black" />
-                    <textarea placeholder="Please explain your requirements" class="w-full p-3 rounded text-black"></textarea>
-                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 py-3 rounded font-semibold">Send</button>
-                </form>
+            <div class="w-full max-w-sm mt-8 md:mt-0">
+                <div class="bg-white/90 backdrop-blur-sm rounded-xl p-6 text-black shadow-lg">
+                    <h3 class="text-xl font-semibold mb-3 text-gray-900">Get in touch instantly</h3>
+                    <p class="text-sm text-gray-700 mb-5">Skip the form — contact us directly.</p>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <a href="https://wa.me/919524148599?text=Hi%20Star%20Construction%2C%20I%27d%20like%20a%20free%20consultation." target="_blank" rel="noopener" class="flex-1 inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white py-3 rounded-md font-medium">
+                            <span>WhatsApp</span>
+                        </a>
+                        <a href="tel:+919524148599" class="flex-1 inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-md font-medium">
+                            <span>Call us</span>
+                        </a>
+                    </div>
+                    <ul class="mt-5 space-y-1 text-sm text-gray-700">
+                        <li>• 15 Years Warranty</li>
+                        <li>• 1,000,000+ sq.ft completed</li>
+                        <li>• Chennai service area</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Stats Section -->
-    <section class="bg-gray-50 py-10">
-        <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <section class="bg-gray-50 py-16">
+        <div class="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
                 <div class="text-blue-600 text-4xl mb-2">📅</div>
                 <h3 class="text-2xl font-bold text-black">120+</h3>
@@ -105,28 +132,28 @@
         </div>
     </section>
     <!-- Service Section -->
-    <section id="service" class="bg-gray-50 mt-10 py-10">
-        <div class="service-container mx-auto">
-            <h2 class="text-center text-2xl font-bold text-blue-800 mb-8">Services</h2>
-            <!-- Service Card -->
-            <div class="service-cards flex flex-col md:flex-row mx-10 item-center justify-center gap-8">
-                <div class="service-card1 bg-white rounded-2xl shadow-md hover:shadow-xl flex flex-col  transition p-6 text-center flex-1">
+    <section id="service" class="bg-gray-50 py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-center text-3xl font-bold text-blue-800 mb-10">Services</h2>
+            <!-- Service Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 text-center">
                     <!-- <img src="" alt=""> -->
-                    <div class="card-bottom">
+                    <div>
                         <h3 class="text-xl font-semibold mb-2 text-gray-800">House Construction</h3>
                         <p class="text-gray-600">From foundation to finishing, we build durable and stylish homes designed for your comfort and lifestyle.</p>
                     </div>
                 </div>
-                <div class="service-card2 bg-white rounded-2xl shadow-md hover:shadow-xl flex flex-col  transition p-6 text-center flex-1">
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 text-center">
                     <!-- <img src="" alt=""> -->
-                    <div class="card-bottom">
+                    <div>
                         <h3 class="text-xl font-semibold mb-2 text-gray-800">Renovation & Remodeling</h3>
                         <p class="text-gray-600">Upgrade your old spaces with modern designs, stronger structures, and fresh interiors.</p>
                     </div>
                 </div>
-                <div class="service-card1 bg-white rounded-2xl shadow-md hover:shadow-xl flex flex-col  transition p-6 text-center flex-1">
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 text-center">
                     <!-- <img src="" alt=""> -->
-                    <div class="card-bottom">
+                    <div>
                         <h3 class="text-xl font-semibold mb-2 text-gray-800">Interior & Exterior Design</h3>
                         <p class="text-gray-600">Stylish, functional, and long-lasting designs that enhance both beauty and usability.</p>
                     </div>
@@ -135,36 +162,36 @@
             <!-- Calculation Section -->
             <div class="text-center mt-12">
                 <p class="text-gray-700 mb-4">Want to know how much your dream project will cost?</p>
-                <button onclick="window.location.href='service.html'" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition">
+                <button onclick="window.location.href='service.html'" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition">
                     Get Construction Estimate
                 </button>
             </div>
         </div>
     </section>
     <!-- Product Section -->
-    <section class="Production py-12 bg-gray-50">
+    <section class="Production py-16 bg-gray-50">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center text-blue-800 mb-10">Our Products</h2>
 
-            <!-- Product Flex -->
-            <div class="flex items-center gap-10 justify-center">
-
+            <!-- Product Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 place-items-center">
                 <!-- Single Product -->
-                <div class="bg-white rounded-2xl shadow-md p-4 hover:shadow-xl transition w-72">
-                    <img src="assests/images/Product Images/product.jpg" alt="Product 1" class="object-cover rounded-lg mb-4 ">
+                <div class="bg-white rounded-2xl shadow-md p-4 hover:shadow-xl transition w-full max-w-sm">
+                    <img src="assests/images/Product Images/product.jpg" alt="Product 1" class="rounded-lg mb-4 w-full object-cover aspect-[4/3]">
                 </div>
 
                 <!-- Repeat Product -->
-                <div class="bg-white rounded-2xl shadow-md p-4 hover:shadow-xl transition w-72">
-                    <img src="assests/images/Product Images/Product1.jpg" alt="Product 2" class="object-cover rounded-lg mb-4">
+                <div class="bg-white rounded-2xl shadow-md p-4 hover:shadow-xl transition w-full max-w-sm">
+                    <img src="assests/images/Product Images/Product1.jpg" alt="Product 2" class="rounded-lg mb-4 w-full object-cover aspect-[4/3]">
                 </div>
 
                 <!-- Repeat Product -->
-                <div class="bg-white rounded-2xl shadow-md p-4 hover:shadow-xl transition w-72">
-                    <img src="assests/images/Product Images/product2.jpg" alt="Product 3" class="object-cover rounded-lg mb-4">
+                <div class="bg-white rounded-2xl shadow-md p-4 hover:shadow-xl transition w-full max-w-sm">
+                    <img src="assests/images/Product Images/product2.jpg" alt="Product 3" class="rounded-lg mb-4 w-full object-cover aspect-[4/3]">
                 </div>
 
             </div>
+
             <!-- Business Info -->
             <div class="mt-12 bg-white shadow-md rounded-2xl p-6 text-center">
                 <h3 class="text-2xl font-semibold text-blue-800 mb-4">Available in Offline</h3>
@@ -189,16 +216,16 @@
                 Client Satisfaction Story
             </h2>
 
-            <div class="relative overflow-hidden">
+            <div id="testimonialViewport" class="relative overflow-hidden">
                 <!-- Left Button -->
-                <!-- <button onclick="prevImage()" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-400 text-white p-3 rounded-full shadow-lg hover:bg-black z-10">
+                <button onclick="prevTestimonial()" aria-label="Previous testimonial" class="absolute left-2 top-1/2 -translate-y-1/2 bg-gray-700/80 hover:bg-gray-900 text-white p-2 md:p-3 rounded-full shadow-lg z-10">
                     &#10094;
-                </button> -->
+                </button>
 
                 <!-- Carousel Wrapper -->
-                <div id="carousel" class="flex transition-transform duration-500">
+                <div id="carousel" class="flex transition-transform duration-500 ease-in-out">
                     <!-- Review 1 -->
-                    <div class="w-1/3 bg-gray-100 text-black rounded-lg p-6 mx-2 shadow">
+                    <div class="flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.333%] bg-gray-100 text-black rounded-lg p-6 mx-2 shadow">
                         <p class="italic">
                             "Star Construction built my house on time with excellent quality.
                             Truly reliable!"
@@ -213,7 +240,7 @@
                     </div>
 
                     <!-- Review 2 -->
-                    <div class="w-1/3 bg-gray-100 text-black rounded-lg p-6 mx-2 shadow">
+                    <div class="flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.333%] bg-gray-100 text-black rounded-lg p-6 mx-2 shadow">
                         <p class="italic">
                             "Very professional team. They completed our office project smoothly
                             and quickly."
@@ -228,7 +255,7 @@
                     </div>
 
                     <!-- Review 3 -->
-                    <div class="w-1/3 bg-gray-100 text-black rounded-lg p-6 mx-2 shadow">
+                    <div class="flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.333%] bg-gray-100 text-black rounded-lg p-6 mx-2 shadow">
                         <p class="italic">
                             "Affordable, trustworthy, and great quality. They kept us updated
                             throughout."
@@ -243,7 +270,7 @@
                     </div>
 
                     <!-- Review 4 -->
-                    <div class="w-1/3 bg-gray-100 text-black rounded-lg p-6 mx-2 shadow">
+                    <div class="flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.333%] bg-gray-100 text-black rounded-lg p-6 mx-2 shadow">
                         <p class="italic">
                             "Star Construction built my house on time with excellent quality.
                             Truly reliable!"
@@ -259,17 +286,17 @@
                 </div>
 
                 <!-- Right Button -->
-                <!-- <button onclick="nextImage()" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-400 text-white p-3 rounded-full shadow-lg hover:bg-black z-10">
+                <button onclick="nextTestimonial()" aria-label="Next testimonial" class="absolute right-2 top-1/2 -translate-y-1/2 bg-gray-700/80 hover:bg-gray-900 text-white p-2 md:p-3 rounded-full shadow-lg z-10">
                     &#10095;
-                </button> -->
+                </button>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="bg-black text-white py-12">
+    <section id="contact" class="bg-black text-white py-16">
         <h2 class="text-center text-2xl md:text-3xl font-semibold">Contact Us For Your Free Consultation</h2>
-        <div class="flex justify-center items-center h-ful m-9">
+        <div class="flex justify-center items-center my-9">
             <button onclick="window.location.href='service.html'" class="px-5 py-3 bg-blue-600 hover:bg-blue-700 rounded">
                 Get Free Quote
             </button>
@@ -278,22 +305,22 @@
     </section>
 
     <!-- Our Projects Carousel -->
-    <section id="project" class="bg-white py-12">
-        <div class="container mx-auto text-center">
+    <section id="project" class="bg-white py-16">
+        <div class="container mx-auto text-center px-6">
             <h2 class="text-3xl font-bold mb-6 text-black">Our Projects</h2>
 
-            <div class="relative w-[400px] max-w-5xl mx-auto overflow-hidden rounded-lg shadow-lg">
+            <div id="projectsViewport" class="relative w-full max-w-5xl mx-auto overflow-hidden rounded-lg shadow-lg">
                 <div id="projectsCarousel" class="flex transition-transform duration-500 ease-in-out">
-                    <img src="dist/images/Project -1.jpg" class="w-full flex-shrink-0" alt="Project 1">
-                    <img src="dist/images/Project 2.jpg" class="w-full flex-shrink-0" alt="Project 2">
-                    <img src="dist/images/Project 3.jpg" class="w-full flex-shrink-0" alt="Project 3">
-                    <img src="dist/images/Project 4.jpg" class="w-full flex-shrink-0" alt="Project 4">
-                    <img src="dist/images/Project 4.jpg" class="w-full flex-shrink-0" alt="Project 4">
-                    <img src="dist/images/Project 6.jpg" class="w-full flex-shrink-0" alt="Project 6">
-                    <img src="dist/images/Project 7.jpg" class="w-full flex-shrink-0" alt="Project 7">
-                    <img src="dist/images/Project 8.jpg" class="w-full flex-shrink-0" alt="Project 8">
-                    <img src="dist/images/Project 9.jpg" class="w-full flex-shrink-0" alt="Project 9">
-                    <img src="dist/images/Project 10.jpg" class="w-full flex-shrink-0" alt="Project 10">
+                    <img src="dist/images/Project -1.jpg" class="min-w-full h-64 md:h-96 object-cover" alt="Project 1">
+                    <img src="dist/images/Project 2.jpg" class="min-w-full h-64 md:h-96 object-cover" alt="Project 2">
+                    <img src="dist/images/Project 3.jpg" class="min-w-full h-64 md:h-96 object-cover" alt="Project 3">
+                    <img src="dist/images/Project 4.jpg" class="min-w-full h-64 md:h-96 object-cover" alt="Project 4">
+                    <img src="dist/images/Project 4.jpg" class="min-w-full h-64 md:h-96 object-cover" alt="Project 4">
+                    <img src="dist/images/Project 6.jpg" class="min-w-full h-64 md:h-96 object-cover" alt="Project 6">
+                    <img src="dist/images/Project 7.jpg" class="min-w-full h-64 md:h-96 object-cover" alt="Project 7">
+                    <img src="dist/images/Project 8.jpg" class="min-w-full h-64 md:h-96 object-cover" alt="Project 8">
+                    <img src="dist/images/Project 9.jpg" class="min-w-full h-64 md:h-96 object-cover" alt="Project 9">
+                    <img src="dist/images/Project 10.jpg" class="min-w-full h-64 md:h-96 object-cover" alt="Project 10">
                 </div>
 
                 <button onclick="prevProject()" class="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-700 text-white p-3 rounded-full hover:bg-gray-900">
@@ -308,7 +335,7 @@
 
     <!-- Footer -->
     <footer class="bg-[#1E1E1E] text-gray-300">
-        <div class="container mx-auto px-6 py-12 flex justify-around item-center  gap-10">
+        <div class="container mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-start gap-10 text-center md:text-left">
 
             <!-- Contact Section -->
             <div>
@@ -330,25 +357,25 @@
                 </p>
 
                 <!-- Social Icons -->
-                <div class="flex space-x-4 text-2xl">
+                <!-- <div class="flex space-x-4 text-2xl">
                     <a href="#" class="hover:text-orange-400">🌐</a>
                     <a href="#" class="hover:text-orange-400">📸</a>
                     <a href="#" class="hover:text-orange-400">💼</a>
                     <a href="#" class="hover:text-orange-400">▶️</a>
                     <a href="#" class="hover:text-orange-400">❓</a>
                     <a href="#" class="hover:text-orange-400">❌</a>
-                </div>
+                </div> -->
             </div>
 
             <!-- Page Links -->
             <div>
                 <h3 class="text-white font-bold text-xl mb-4 ">Page Links</h3>
                 <ul class="space-y-2">
-                    <li><a href="#" class="hover:text-orange-400">Home</a></li>
-                    <li><a href="#" class="hover:text-orange-400">About us</a></li>
-                    <li><a href="#" class="hover:text-orange-400">Services</a></li>
-                    <li><a href="#" class="hover:text-orange-400">Projects</a></li>
-                    <li><a href="#" class="hover:text-orange-400">Contact</a></li>
+                    <li><a href="#hero" class="hover:text-orange-400">Home</a></li>
+                    <li><a href="about.html" class="hover:text-orange-400">About us</a></li>
+                    <li><a href="#service" class="hover:text-orange-400">Services</a></li>
+                    <li><a href="#project" class="hover:text-orange-400">Projects</a></li>
+                    <li><a href="#contact" class="hover:text-orange-400">Contact</a></li>
                 </ul>
             </div>
 
@@ -356,17 +383,17 @@
             <div>
                 <h3 class="text-white font-bold text-xl mb-4">Useful Links</h3>
                 <ul class="space-y-2">
-                    <li><a href="#" class="hover:text-orange-400">Cost Calculator</a></li>
-                    <li><a href="#" class="hover:text-orange-400">Building Construction</a></li>
+                    <li><a href="service.html" class="hover:text-orange-400">Cost Calculator</a></li>
+                    <!-- <li><a href="#" class="hover:text-orange-400">Building Construction</a></li>
                     <li><a href="#" class="hover:text-orange-400">Knowledge Center</a></li>
-                    <li><a href="#" class="hover:text-orange-400">Join as a Contractor</a></li>
+                    <li><a href="#" class="hover:text-orange-400">Join as a Contractor</a></li> -->
                 </ul>
             </div>
         </div>
 
         <!-- Copyright -->
         <div class="text-center text-sm text-gray-400 py-4 border-t border-gray-700">
-            © Copyright 2025 Star Construction. All rights reserved.
+            &copy; Copyright 2025 Star Construction. All rights reserved.
         </div>
     </footer>
 
@@ -384,24 +411,89 @@
             }
         });
 
+        // Mobile menu toggle
+        const menuToggle = document.getElementById("menuToggle");
+        const mobileMenu = document.getElementById("mobileMenu");
+        if (menuToggle && mobileMenu) {
+            menuToggle.addEventListener("click", () => {
+                mobileMenu.classList.toggle("hidden");
+                const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+                menuToggle.setAttribute("aria-expanded", String(!expanded));
+            });
+            mobileMenu.querySelectorAll("a").forEach(a => {
+                a.addEventListener("click", () => {
+                    mobileMenu.classList.add("hidden");
+                    menuToggle.setAttribute("aria-expanded", "false");
+                });
+            });
+        }
+
         // Client Satisfaction Carousel
-        // const carousel = document.getElementById("carousel");
-        // const images = carousel.children;
-        // let index = 0;
+        const testimonialViewport = document.getElementById("testimonialViewport");
+        const carousel = document.getElementById("carousel");
+        const testimonialSlides = Array.from(carousel ? carousel.children : []);
+        let testimonialIndex = 0;
+        let testimonialItemsPerView = getItemsPerView();
 
-        // function showImages() {
-        //     carousel.style.transform = `translateX(-${index * 33.33}%)`;
-        // }
+        function getItemsPerView() {
+            if (window.innerWidth >= 1024) return 3; // lg
+            if (window.innerWidth >= 768) return 2;  // md
+            return 1;                                // sm
+        }
 
-        // function nextImage() {
-        //     index = (index + 1) % images.length;
-        //     showImages();
-        // }
+        function getSlideWidth() {
+            const first = testimonialSlides[0];
+            if (!first) return 0;
+            const rect = first.getBoundingClientRect();
+            const style = window.getComputedStyle(first);
+            const margin = parseFloat(style.marginLeft) + parseFloat(style.marginRight);
+            return rect.width + margin;
+        }
 
-        // function prevImage() {
-        //     index = (index - 1 + images.length) % images.length;
-        //     showImages();
-        // }
+        function clampTestimonialIndex() {
+            const max = Math.max(0, testimonialSlides.length - testimonialItemsPerView);
+            if (testimonialIndex > max) testimonialIndex = max;
+            if (testimonialIndex < 0) testimonialIndex = 0;
+        }
+
+        function showTestimonials() {
+            if (!carousel) return;
+            const slideWidth = getSlideWidth();
+            clampTestimonialIndex();
+            carousel.style.transform = `translateX(-${testimonialIndex * slideWidth}px)`;
+        }
+
+        function recalcTestimonials() {
+            testimonialItemsPerView = getItemsPerView();
+            showTestimonials();
+        }
+
+        function nextTestimonial() {
+            const max = Math.max(0, testimonialSlides.length - testimonialItemsPerView);
+            testimonialIndex = testimonialIndex >= max ? 0 : testimonialIndex + 1;
+            showTestimonials();
+        }
+
+        function prevTestimonial() {
+            const max = Math.max(0, testimonialSlides.length - testimonialItemsPerView);
+            testimonialIndex = testimonialIndex <= 0 ? max : testimonialIndex - 1;
+            showTestimonials();
+        }
+
+        // Initialize carousel positioning
+        showTestimonials();
+        window.addEventListener("resize", recalcTestimonials);
+
+        // Autoplay with hover pause
+        let testimonialTimer = setInterval(nextTestimonial, 5000);
+        if (testimonialViewport) {
+            testimonialViewport.addEventListener("mouseenter", () => {
+                clearInterval(testimonialTimer);
+            });
+            testimonialViewport.addEventListener("mouseleave", () => {
+                testimonialTimer = setInterval(nextTestimonial, 5000);
+            });
+        }
         // Projects Carousel
         const projectsCarousel = document.getElementById("projectsCarousel");
         let projectIndex = 0;

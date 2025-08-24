@@ -1,211 +1,428 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Construction Cost Calculator - Services</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
     <style>
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+      }
 
-        .accordion-content.active {
-            max-height: 1000px;
-            transition: max-height 0.3s ease-in;
-        }
+      .accordion-content.active {
+        max-height: 1000px;
+        transition: max-height 0.3s ease-in;
+      }
     </style>
-</head>
+  </head>
 
-<body class="bg-gray-50">
-    <!-- Header -->
-    <header class="bg-white shadow-sm">
-        <nav class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <div class="text-2xl font-bold text-blue-600">ConstructPro</div>
-                <div class="hidden md:flex space-x-6">
-                    <a href="index.html" class="text-gray-600 hover:text-blue-600">Home</a>
-                    <a href="about.html" class="text-gray-600 hover:text-blue-600">About</a>
-                    <a href="service.html" class="text-blue-600 font-semibold">Services</a>
-                </div>
-            </div>
-        </nav>
-    </header>
+  <body class="bg-gray-50">
+    <!-- Navbar (matching about page) -->
+    <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-300 px-4 md:px-[50px]">
+      <div class="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 py-3 md:py-4">
+        <!-- Logo -->
+        <div>
+          <a href="index.html#hero" aria-label="Go to Home">
+            <img src="./public/images/star-logo.png" alt="Logo" class="h-14">
+          </a>
+        </div>
+        <!-- Mobile Menu Button -->
+        <button id="menuToggle" class="md:hidden p-2 rounded focus:outline-none" aria-label="Toggle menu" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <!-- Links -->
+        <ul class="hidden md:flex space-x-6 font-medium">
+          <li><a href="index.html" class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition">Home</a></li>
+          <li><a href="about.html" class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition">About us</a></li>
+          <li><a href="service.html" class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition">Services</a></li>
+          <li><a href="#" class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition">Contact</a></li>
+          <li><a href="#" class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition">Projects</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="md:hidden hidden fixed top-16 left-0 w-full bg-white text-black shadow z-40">
+      <ul class="flex flex-col items-center py-4 space-y-4 font-medium">
+        <li><a href="index.html#hero" class="hover:text-yellow-400">Home</a></li>
+        <li><a href="about.html" class="hover:text-yellow-400">About us</a></li>
+        <li><a href="service.html" class="hover:text-yellow-400">Services</a></li>
+        <li><a href="index.html#contact" class="hover:text-yellow-400">Contact</a></li>
+        <li><a href="index.html#project" class="hover:text-yellow-400">Projects</a></li>
+      </ul>
+    </div>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Construction Cost Calculator</h1>
-            <p class="text-xl mb-8">Get instant estimates for your dream home construction</p>
-        </div>
+    <section
+      class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16"
+    >
+      <div class="container mx-auto px-6 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          Construction Cost Calculator
+        </h1>
+        <p class="text-xl mb-8">
+          Get instant estimates for your dream home construction
+        </p>
+      </div>
     </section>
 
     <!-- Calculator Section -->
     <section class="py-16">
-        <div class="container mx-auto px-6">
-            <!-- Pricing Packages Info -->
-            <div class="mt-1 mb-16">
-                <h2 class="text-3xl font-bold text-center mb-10">Our Construction Packages</h2>
-                <div class="grid md:grid-cols-3 gap-8" id="pricing-packages">
-                    <!-- Packages will be loaded here -->
-                </div>
-            </div>
-            <div class="grid lg:grid-cols-2 gap-8">
-                <!-- Calculator Form -->
-                <div class="bg-white rounded-lg shadow-lg p-8">
-                    <h2 class="text-2xl font-bold mb-6">House Construction Cost Calculator</h2>
-
-                    <!-- Construction Area -->
-                    <div class="mb-6">
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Construction area in sq.ft</label>
-                        <div class="flex items-center border border-gray-300 rounded-lg">
-                            <input type="number" id="construction-area" value="0" min="0" max="10000" class="flex-1 px-4 py-3 border-0 rounded-l-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
-                            <div class="flex flex-col">
-                                <button onclick="incrementValue('construction-area')" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 border-l border-gray-300">
-                                    <i class="fas fa-chevron-up text-xs"></i>
-                                </button>
-                                <button onclick="decrementValue('construction-area')" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 border-l border-t border-gray-300">
-                                    <i class="fas fa-chevron-down text-xs"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <p class="text-xs text-gray-500 mt-1">Min: 0 - Max: 10000</p>
-                    </div>
-
-                    <!-- Package Selection -->
-                    <div class="mb-6">
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Select construction Package</label>
-                        <div class="relative">
-                            <select id="package-select" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none appearance-none bg-white">
-                                <option value="">Select value</option>
-                                <option value="basic">Basic</option>
-                                <option value="standard" selected>Standard</option>
-                                <option value="advanced">Premium</option>
-                            </select>
-                            <i class="fas fa-chevron-down absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none"></i>
-                        </div>
-                    </div>
-
-                    <!-- Car Parking -->
-                    <div class="mb-6">
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Car Parking area in square feet(optional)</label>
-                        <div class="flex items-center border border-gray-300 rounded-lg">
-                            <input type="number" id="car-parking" value="0" min="0" max="10000" class="flex-1 px-4 py-3 border-0 rounded-l-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
-                            <div class="flex flex-col">
-                                <button onclick="incrementValue('car-parking')" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 border-l border-gray-300">
-                                    <i class="fas fa-chevron-up text-xs"></i>
-                                </button>
-                                <button onclick="decrementValue('car-parking')" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 border-l border-t border-gray-300">
-                                    <i class="fas fa-chevron-down text-xs"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <p class="text-xs text-gray-500 mt-1">Min: 0 - Max: 10000</p>
-                        <p class="text-xs text-gray-500">car parking will be charged @Rs.1800/sft.approximately</p>
-                    </div>
-
-                    <!-- Underground Sump -->
-                    <div class="mb-6">
-                        <label class="block text-sm font-medium text-gray-700 mb-2">How many litres of underground sump required ? (optional)</label>
-                        <div class="relative">
-                            <input type="range" id="sump-range" min="0" max="20000" value="0" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider">
-                            <div class="flex justify-between text-xs text-gray-500 mt-1">
-                                <span>0</span>
-                                <span id="sump-value">0</span>
-                                <span>20000</span>
-                            </div>
-                        </div>
-                        <p class="text-xs text-gray-500 mt-1">An average family of 4 will require minimum of 10,000 litres</p>
-                    </div>
-
-                    <!-- Waste Water Recycling -->
-                    <div class="mb-6">
-                        <label class="block text-sm font-medium text-gray-700 mb-2">How many person waste water recycling tank required?(optional)</label>
-                        <div class="relative">
-                            <input type="range" id="recycling-range" min="0" max="10" value="0" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider">
-                            <div class="flex justify-between text-xs text-gray-500 mt-1">
-                                <span>0</span>
-                                <span id="recycling-value">0</span>
-                                <span>10</span>
-                            </div>
-                        </div>
-                        <p class="text-xs text-gray-500 mt-1">Waste water recycling tank is an alternative to septic tank. It recycle the waste water &recharges underground water table.</p>
-                    </div>
-
-                    <!-- Compound Wall -->
-                    <div class="mb-6">
-                        <label class="block text-sm font-medium text-gray-700 mb-2">How much feet length compound wall do you require?(optional)</label>
-                        <div class="flex items-center border border-gray-300 rounded-lg">
-                            <input type="number" id="compound-wall" value="0" min="0" max="1000" class="flex-1 px-4 py-3 border-0 rounded-l-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
-                            <div class="flex flex-col">
-                                <button onclick="incrementValue('compound-wall')" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 border-l border-gray-300">
-                                    <i class="fas fa-chevron-up text-xs"></i>
-                                </button>
-                                <button onclick="decrementValue('compound-wall')" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 border-l border-t border-gray-300">
-                                    <i class="fas fa-chevron-down text-xs"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <p class="text-xs text-gray-500 mt-1">Min: 0 - Max: 1000</p>
-                        <p class="text-xs text-gray-500">If plot size is 40x30, compound wall length will be 40+40+30+30=140 feet</p>
-                    </div>
-
-                    <!-- Solar Power -->
-                    <div class="mb-6">
-                        <label class="block text-sm font-medium text-gray-700 mb-2">How much solar power do you require? (optional)</label>
-                        <div class="relative">
-                            <input type="range" id="solar-range" min="0" max="10" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider">
-                            <div class="flex justify-between text-xs text-gray-500 mt-1">
-                                <span>0</span>
-                                <span id="solar-value">1</span>
-                                <span>10</span>
-                            </div>
-                        </div>
-                        <p class="text-xs text-gray-500 mt-1">A 3BHK home will require 2KW solar power to run fans, lights and television during the daytime</p>
-                    </div>
-                </div>
-
-                <!-- Summary Section -->
-                <div class="bg-white rounded-lg shadow-lg p-8 sticky top-8">
-                    <div class="border-b border-gray-200 pb-4 mb-4">
-                        <h3 class="text-xl font-bold">Total Summary</h3>
-                        <button onclick="toggleSummary()" class="float-right mt-1">
-                            <i id="summary-icon" class="fas fa-chevron-up text-gray-400"></i>
-                        </button>
-                    </div>
-
-                    <div id="summary-content">
-                        <div class="grid grid-cols-2 gap-4 text-sm font-medium text-gray-700 border-b border-gray-200 pb-2 mb-4">
-                            <div>Name</div>
-                            <div class="text-right">Total</div>
-                        </div>
-
-                        <div id="summary-items" class="space-y-3">
-                            <!-- Summary items will be populated here -->
-                        </div>
-
-                        <div class="border-t border-gray-200 pt-4 mt-4">
-                            <div class="flex justify-between items-center text-lg font-bold">
-                                <span>Total Cost:</span>
-                                <span id="grand-total" class="text-blue-600">₹ 75,000.00</span>
-                            </div>
-                        </div>
-
-                        <button onclick="submitCalculation()" class="w-full mt-6 bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 transition duration-300 font-semibold">
-                            Submit
-                        </button>
-                    </div>
-                </div>
-            </div>
-
+      <div class="container mx-auto px-6">
+        <!-- Pricing Packages Info -->
+        <div class="mt-1 mb-16">
+          <h2 class="text-3xl font-bold text-center mb-10">
+            Our Construction Packages
+          </h2>
+          <div class="grid md:grid-cols-3 gap-8" id="pricing-packages">
+            <!-- Packages will be loaded here -->
+          </div>
         </div>
+        <div class="grid lg:grid-cols-2 gap-8">
+          <!-- Calculator Form -->
+          <div class="bg-white rounded-lg shadow-lg p-8">
+            <h2 class="text-2xl font-bold mb-6">
+              House Construction Cost Calculator
+            </h2>
+
+            <!-- Construction Area -->
+            <div class="mb-6">
+              <label class="block text-sm font-medium text-gray-700 mb-2"
+                >Construction area in sq.ft</label
+              >
+              <div class="flex items-center border border-gray-300 rounded-lg">
+                <input
+                  type="number"
+                  id="construction-area"
+                  value="0"
+                  min="0"
+                  max="10000"
+                  class="flex-1 px-4 py-3 border-0 rounded-l-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                />
+                <div class="flex flex-col">
+                  <button
+                    onclick="incrementValue('construction-area')"
+                    class="px-3 py-1 bg-gray-100 hover:bg-gray-200 border-l border-gray-300"
+                  >
+                    <i class="fas fa-chevron-up text-xs"></i>
+                  </button>
+                  <button
+                    onclick="decrementValue('construction-area')"
+                    class="px-3 py-1 bg-gray-100 hover:bg-gray-200 border-l border-t border-gray-300"
+                  >
+                    <i class="fas fa-chevron-down text-xs"></i>
+                  </button>
+                </div>
+              </div>
+              <p class="text-xs text-gray-500 mt-1">Min: 0 - Max: 10000</p>
+            </div>
+
+            <!-- Package Selection -->
+            <div class="mb-6">
+              <label class="block text-sm font-medium text-gray-700 mb-2"
+                >Select construction Package</label
+              >
+              <div class="relative">
+                <select
+                  id="package-select"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none appearance-none bg-white"
+                >
+                  <option value="">Select value</option>
+                  <option value="basic">Basic</option>
+                  <option value="standard" selected>Standard</option>
+                  <option value="advanced">Premium</option>
+                </select>
+                <i
+                  class="fas fa-chevron-down absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none"
+                ></i>
+              </div>
+            </div>
+
+            <!-- Car Parking -->
+            <div class="mb-6">
+              <label class="block text-sm font-medium text-gray-700 mb-2"
+                >Car Parking area in square feet(optional)</label
+              >
+              <div class="flex items-center border border-gray-300 rounded-lg">
+                <input
+                  type="number"
+                  id="car-parking"
+                  value="0"
+                  min="0"
+                  max="10000"
+                  class="flex-1 px-4 py-3 border-0 rounded-l-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                />
+                <div class="flex flex-col">
+                  <button
+                    onclick="incrementValue('car-parking')"
+                    class="px-3 py-1 bg-gray-100 hover:bg-gray-200 border-l border-gray-300"
+                  >
+                    <i class="fas fa-chevron-up text-xs"></i>
+                  </button>
+                  <button
+                    onclick="decrementValue('car-parking')"
+                    class="px-3 py-1 bg-gray-100 hover:bg-gray-200 border-l border-t border-gray-300"
+                  >
+                    <i class="fas fa-chevron-down text-xs"></i>
+                  </button>
+                </div>
+              </div>
+              <p class="text-xs text-gray-500 mt-1">Min: 0 - Max: 10000</p>
+              <p class="text-xs text-gray-500">
+                car parking will be charged @Rs.1800/sft.approximately
+              </p>
+            </div>
+
+            <!-- Underground Sump -->
+            <div class="mb-6">
+              <label class="block text-sm font-medium text-gray-700 mb-2"
+                >How many litres of underground sump required ?
+                (optional)</label
+              >
+              <div class="relative">
+                <input
+                  type="range"
+                  id="sump-range"
+                  min="0"
+                  max="20000"
+                  value="0"
+                  class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider"
+                />
+                <div class="flex justify-between text-xs text-gray-500 mt-1">
+                  <span>0</span>
+                  <span id="sump-value">0</span>
+                  <span>20000</span>
+                </div>
+              </div>
+              <p class="text-xs text-gray-500 mt-1">
+                An average family of 4 will require minimum of 10,000 litres
+              </p>
+            </div>
+
+            <!-- Waste Water Recycling -->
+            <div class="mb-6">
+              <label class="block text-sm font-medium text-gray-700 mb-2"
+                >How many person waste water recycling tank
+                required?(optional)</label
+              >
+              <div class="relative">
+                <input
+                  type="range"
+                  id="recycling-range"
+                  min="0"
+                  max="10"
+                  value="0"
+                  class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider"
+                />
+                <div class="flex justify-between text-xs text-gray-500 mt-1">
+                  <span>0</span>
+                  <span id="recycling-value">0</span>
+                  <span>10</span>
+                </div>
+              </div>
+              <p class="text-xs text-gray-500 mt-1">
+                Waste water recycling tank is an alternative to septic tank. It
+                recycle the waste water &recharges underground water table.
+              </p>
+            </div>
+
+            <!-- Compound Wall -->
+            <div class="mb-6">
+              <label class="block text-sm font-medium text-gray-700 mb-2"
+                >How much feet length compound wall do you
+                require?(optional)</label
+              >
+              <div class="flex items-center border border-gray-300 rounded-lg">
+                <input
+                  type="number"
+                  id="compound-wall"
+                  value="0"
+                  min="0"
+                  max="1000"
+                  class="flex-1 px-4 py-3 border-0 rounded-l-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                />
+                <div class="flex flex-col">
+                  <button
+                    onclick="incrementValue('compound-wall')"
+                    class="px-3 py-1 bg-gray-100 hover:bg-gray-200 border-l border-gray-300"
+                  >
+                    <i class="fas fa-chevron-up text-xs"></i>
+                  </button>
+                  <button
+                    onclick="decrementValue('compound-wall')"
+                    class="px-3 py-1 bg-gray-100 hover:bg-gray-200 border-l border-t border-gray-300"
+                  >
+                    <i class="fas fa-chevron-down text-xs"></i>
+                  </button>
+                </div>
+              </div>
+              <p class="text-xs text-gray-500 mt-1">Min: 0 - Max: 1000</p>
+              <p class="text-xs text-gray-500">
+                If plot size is 40x30, compound wall length will be
+                40+40+30+30=140 feet
+              </p>
+            </div>
+
+            <!-- Solar Power -->
+            <div class="mb-6">
+              <label class="block text-sm font-medium text-gray-700 mb-2"
+                >How much solar power do you require? (optional)</label
+              >
+              <div class="relative">
+                <input
+                  type="range"
+                  id="solar-range"
+                  min="0"
+                  max="10"
+                  value="1"
+                  class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider"
+                />
+                <div class="flex justify-between text-xs text-gray-500 mt-1">
+                  <span>0</span>
+                  <span id="solar-value">1</span>
+                  <span>10</span>
+                </div>
+              </div>
+              <p class="text-xs text-gray-500 mt-1">
+                A 3BHK home will require 2KW solar power to run fans, lights and
+                television during the daytime
+              </p>
+            </div>
+          </div>
+
+          <!-- Summary Section -->
+          <div class="bg-white rounded-lg shadow-lg p-8 sticky top-8">
+            <div class="border-b border-gray-200 pb-4 mb-4">
+              <h3 class="text-xl font-bold">Total Summary</h3>
+              <button onclick="toggleSummary()" class="float-right mt-1">
+                <i
+                  id="summary-icon"
+                  class="fas fa-chevron-up text-gray-400"
+                ></i>
+              </button>
+            </div>
+
+            <div id="summary-content">
+              <div
+                class="grid grid-cols-2 gap-4 text-sm font-medium text-gray-700 border-b border-gray-200 pb-2 mb-4"
+              >
+                <div>Name</div>
+                <div class="text-right">Total</div>
+              </div>
+
+              <div id="summary-items" class="space-y-3">
+                <!-- Summary items will be populated here -->
+              </div>
+
+              <div class="border-t border-gray-200 pt-4 mt-4">
+                <div
+                  class="flex justify-between items-center text-lg font-bold"
+                >
+                  <span>Total Cost:</span>
+                  <span id="grand-total" class="text-blue-600"
+                    >₹ 75,000.00</span
+                  >
+                </div>
+              </div>
+
+              <!-- <button onclick="submitCalculation()" class="w-full mt-6 bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 transition duration-300 font-semibold">
+                            Submit
+                        </button> -->
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <script src="calculator.js"></script>
-</body>
+    <!-- Footer -->
+    <footer class="bg-[#1E1E1E] text-gray-300">
+        <div class="container mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-start gap-10 text-center md:text-left">
+            <!-- Contact Section -->
+            <div>
+                <h3 class="text-white font-bold text-xl mb-4">Contact</h3>
+                <p class="mb-4">
+                    2nd floor, 87a, 2nd Main Rd, above Zalya’s Closet, <br>
+                    Nolambur Phase II, Mogappair West, Chennai, Tamil Nadu – 600037
+                </p>
+                <p class="flex items-center gap-2 mb-2">
+                    <span class="text-orange-500 text-2xl">📞</span>
+                    <span class="font-semibold text-white">9524148599 | 8940853255 | 9843310185</span>
+                </p>
+                <p class="text-sm mb-4">Mon - Sat 10:00 am - 7:00 pm</p>
+                <p class="flex items-center gap-2 mb-4">
+                    <span class="text-orange-500 text-2xl">✉️</span>
+                    <a href="mailto:info@hireandbuild.com" class="hover:text-orange-400">
+                        info@StarConstruction.com
+                    </a>
+                </p>
+            </div>
 
+            <!-- Page Links -->
+            <div>
+                <h3 class="text-white font-bold text-xl mb-4 ">Page Links</h3>
+                <ul class="space-y-2">
+                  <li><a href="index.html#hero" class="hover:text-orange-400">Home</a></li>
+                  <li><a href="about.html" class="hover:text-orange-400">About us</a></li>
+                  <li><a href="index.html#service" class="hover:text-orange-400">Services</a></li>
+                  <li><a href="index.html#project" class="hover:text-orange-400">Projects</a></li>
+                  <li><a href="index.html#contact" class="hover:text-orange-400">Contact</a></li>
+                </ul>
+              </div>
+
+            <!-- Useful Links -->
+            <div>
+                <h3 class="text-white font-bold text-xl mb-4">Useful Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="service.html" class="hover:text-orange-400">Cost Calculator</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-center text-sm text-gray-400 py-4 border-t border-gray-700">
+            &copy; Copyright 2025 Star Construction. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="calculator.js"></script>
+    <script>
+      // Navbar Scroll Effect (match index.html behavior)
+      window.addEventListener("scroll", function() {
+        const navbar = document.querySelector("nav");
+        if (window.scrollY > 50) {
+          navbar.classList.add("bg-white", "shadow", "text-black");
+          navbar.classList.remove("bg-transparent", "text-white");
+        } else {
+          navbar.classList.remove("bg-white", "shadow", "text-black");
+          navbar.classList.add("bg-transparent", "text-white");
+        }
+      });
+
+      // Mobile menu toggle
+      const menuToggle = document.getElementById("menuToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+      if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+          const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+          menuToggle.setAttribute("aria-expanded", String(!expanded));
+        });
+        mobileMenu.querySelectorAll("a").forEach(a => {
+          a.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+            menuToggle.setAttribute("aria-expanded", "false");
+          });
+        });
+      }
+    </script>
+  </body>
 </html>
