@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>STAR CONSTRUCTION</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Icon Logo -->
     <link rel="icon" type="image/png" href="./public/images/star-logo.png">
@@ -20,139 +21,175 @@
         <div class="container mx-auto flex justify-between items-center py-4 px-6">
 
             <!-- Navbar -->
-            <nav class="fixed top-5left-0 w-full z-50 transition-all duration-300">
-                <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-                    <!-- Logo -->
-                    <div>
-                        <img src="./public/images/star-logo.png" alt="Logo" class="h-10">
-                    </div>
-                    <!-- Links -->
-                    <ul class="hidden md:flex space-x-6 font-medium">
-                        <li><a href="index.html"
-                                class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition">Home</a>
-                        </li>
-                        <li><a href="#"
-                                class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition">About
-                                us</a></li>
-                        <li><a href="#"
-                                class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition">Joint
-                                Venture</a></li>
-                        <li><a href="#"
-                                class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition">Services</a>
-                        </li>
-                        <li><a href="#"
-                                class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition">Projects</a>
-                        </li>
-                        <li><a href="#"
-                                class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition">Careers</a>
-                        </li>
-                        <li><a href="#"
-                                class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition">Blog</a>
-                        </li>
-                        <li><a href="#"
-                                class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+
     </header>
 
     <!-- Page Title -->
-    <section class="max-w-7xl mx-auto px-6">
+    <section class="max-w-7xl mx-auto my-10 px-6">
         <h1 class="text-center text-3xl md:text-4xl font-semibold mt-10 md:mt-14">
             Our Story
         </h1>
+        <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-300  px-[50px]">
+            <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+                <!-- Logo -->
+                <div>
+                    <img src="./public/images/star-logo.png" alt="Logo" class="h-14">
+                </div>
+                <!-- Links -->
+                <ul class="hidden md:flex space-x-6 font-medium">
+                    <li><a href="index.html" class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition">Home</a></li>
+                    <li><a href="about.html" class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition">About us</a></li>
+                    <li><a href="service.html" class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition">Services</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition">Contact</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400 pb-1 transition">Projects</a></li>
+                </ul>
+            </div>
+        </nav>
     </section>
 
     <!-- Two-column content -->
-    <section class="bg-gray-100 py-10">
+    <section class="bg-gray-100 py-10 mt-10">
         <div class="max-w-6xl mx-auto px-6">
-          <div class="flex flex-col md:flex-row items-center gap-8">
-            
-             <!-- Text -->
-             <div class="md:w-1/2">
-                <h2 class="text-3xl font-bold mb-4 text-blue-600">Experience To Be Trusted</h2>
-                <p class="text-lg text-gray-700 leading-relaxed">
-                    Hireandbuild is a one stop solution for all your construction related needs. If you are looking for professional construction services in chennai your search ends here. We provide finest quality construction services
-                </p>
-                <p class="text-gray-400"><span class="font-bold text-gray-500">Hireandbuild</span> was started out of necessity after listening to the pain points of customer in finding a building contractor and managing the project without any quality issues, time and cost over-run. We decided to be a change, we wanted to see in the residential construction industry. </p>
-              </div>
-            <!-- Image -->
-            <div class="md:w-1/2">
-              <img src="./public/images/project1.jpeg" alt="Experience" class="rounded-2xl shadow-lg w-full">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+
+                <!-- Text -->
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold mb-4 text-blue-600">Experience To Be Trusted</h2>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Star Construction is a one-stop solution for all your construction-related needs. If you are looking for professional construction services in Tamil Nadu, your search ends here. We provide the finest quality residential and commercial construction services.
+                    </p>
+                    <p class="text-gray-400">
+                        <span class="font-bold text-gray-500">Star Construction</span> was started out of necessity after listening to the pain points of customers in finding a trustworthy building contractor and managing projects without quality issues, delays, or cost overruns. We decided to be the change we wanted to see in the construction industry.
+                    </p>
+
+                </div>
+                <!-- Image -->
+                <div class="w-full md:w-[700px]">
+                    <img src="dist/images/Project 4.jpg" alt="Experience" class="rounded-2xl shadow-lg w-full">
+                </div>
+
+
+
             </div>
-            
-           
-            
-          </div>
         </div>
-      </section>
-      
+    </section>
+
     <!-- Quote -->
-    <section class="max-w-4xl mx-auto px-6 pb-16 md:pb-24 text-center">
-        <h3 class="text-2xl md:text-3xl italic font-medium">
-            “It All Starts With Why”
+    <section class="  text-center">
+        <h3 class="text-2xl mt-10 md:text-3xl italic font-medium">
+            "Quality Is Not A Process; It's A Habit"
+
         </h3>
-        <p class="mt-2 text-lg text-gray-700">-Simon Sinek</p>
+        <!-- <p class="mt-2 text-lg text-gray-700">-Simon Sinek</p> -->
     </section>
 
     <!-- Section 2 -->
-    <section class="bg-gray-50 py-16">
-        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+    <section class="bg-gray-50 py-16 px-8">
+        <div class="container mx-auto flex flex-row gap-10 justify-center p px-8 items-center">
+
             <!-- Left image -->
-            <div>
-                <img src="https://dummyimage.com/500x500/ffcc00/000000&text=Golden+Circle" alt="Golden Circle"
-                    class="rounded-md shadow-md">
+            <div class=" rounded-md flex justify-center items-center">
+                <img src="dist/images/Everything for customer.png" width="500px" alt="customer service" class="rounded shadow-md">
             </div>
+
+
             <!-- Right text -->
-            <div>
-                <h3 class="text-2xl font-semibold mb-6">Pain Point of a Customer</h3>
-                <ul class="space-y-4 list-disc list-inside text-gray-700">
-                    <li>Finding a residential <strong>building contractors in Chennai</strong> is not the only
-                        problem...</li>
-                    <li>Some contractors use poor quality materials, delay projects, and provide shabby work.</li>
-                    <li>Many people want to build a dream home but are unable to because of this difficulty.</li>
-                    <li>The world is evolving towards online solutions but not for construction.</li>
-                    <li>We started researching and found very few places giving transparent details of construction
-                        service providers.</li>
+            <div class="flex flex-col justify-center">
+                <h2 class="text-4xl font-semibold mb-6">Our Goals</h2>
+                <p>Customer satisfaction is our top most priority. We started this company after <br>listening to multiple customers pain points. We decided to solve it and provide <br>best quality service.</p>
+                <ul class="space-y-4 list-disc list-inside flex flex-col gap-6 mt-4 text-gray-700">
+                    <li>To make sure that there are no project delays</li>
+                    <li>To provide the best price to customer and fix work quality issues.</li>
+                    <li>To ensure that there is no hidden or surprise cost</li>
                 </ul>
             </div>
+
         </div>
     </section>
 
-    <!-- Section 3 -->
-    <section class="container mx-auto px-6 py-16">
-        <div class="grid md:grid-cols-2 gap-10 items-center">
-            <!-- Left text -->
-            <div>
-                <h3 class="text-2xl font-semibold mb-6">"We kept on listening to the customer's pain points"</h3>
-                <p class="mb-4">
-                    Finally, we came up with the idea of creating hireandbuild.
-                    A company that provides end to end construction services according to the customer needs & budget.
-                </p>
-                <p class="mb-4">
-                    We provide the best quality of work and the best value to the customer.
-                    We send regular updates to the customer through mobile app, maintain all the records, designs &
-                    financials
-                    in the app to be available all the time.
-                </p>
-                <p>
-                    A complete transparent process to ensure the work is of the maximum quality.
-                </p>
-            </div>
-            <!-- Right image -->
-            <div class="flex justify-center">
-                <img src="https://dummyimage.com/400x400/cccccc/000000&text=Dog+Listening" alt="Dog Listening"
-                    class="rounded-lg shadow-md">
+    <!-- SECTION 3 -->
+    <section class="bg-gray-100 py-10 mt-10">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+
+                <!-- Text -->
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold mb-4 text-blue-600">About Our Consultancy Services</h2>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Starting a construction project can feel overwhelming, but with the right guidance,
+                        every step becomes clear. Our consultancy service is dedicated to helping individuals
+                        and businesses turn their construction ideas into reality with confidence and clarity.
+                    </p>
+                    <!-- <p class="text-gray-400"><span class="font-bold text-gray-500">Hireandbuild</span> was started out of necessity after listening to the pain points of customer in finding a building contractor and managing the project without any quality issues, time and cost over-run. We decided to be a change, we wanted to see in the residential construction industry. </p> -->
+                </div>
+                <!-- Image -->
+                <div class="w-full md:w-[700px]">
+                    <img src="assests/images/about image/about image1.jpg" alt="Experience" class="rounded-2xl shadow-lg w-full">
+                </div>
+
+
+
             </div>
         </div>
-        <p class="text-center mt-10 italic text-xl">“Quality Is Not A Process; It's A Habit”</p>
     </section>
+    <!-- Section 4 -->
+    <section class="bg-gray-50 py-16 px-8">
+        <div class="container mx-auto flex flex-row gap-10 justify-center p px-8 items-center">
+
+            <!-- Left image -->
+            <div class=" rounded-md flex justify-center items-center">
+                <img src="assests/images/about image/about image2.jpg" width="500px" alt="customer service" class="rounded shadow-md">
+            </div>
 
 
+            <!-- Right text -->
+            <div class="flex flex-col justify-center">
+                <h2 class="text-4xl font-semibold mb-6">About Star Construction</h2>
+                <p> At <span class="font-semibold">Star Construction & Building Chemicals</span>,
+                    we are committed <br>to delivering reliable construction solutions across
+                    Karaikal & <br>Mayiladuthurai district. From high-quality building chemicals
+                    to <br>expert consultancy, our goal is to ensure every project starts <br>and
+                    finishes with excellence.</p>
+                <!-- <ul class="space-y-4 list-disc list-inside flex flex-col gap-6 mt-4 text-gray-700">
+                    <li>To make sure that there are no project delays</li>
+                    <li>To provide the best price to customer and fix work quality issues.</li>
+                    <li>To ensure that there is no hidden or surprise cost</li>
+                </ul> -->
+            </div>
+
+        </div>
+    </section>
+    <!-- section 5 -->
+    <section class="bg-gray-100 py-10 mt-10">
+        <div class="max-w-6xl flex justify-center item-center items-center mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-center items-center gap-8">
+
+                <!-- Text -->
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold mb-4 text-blue-600">Star Consultancy Services</h2>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        At <span class="font-semibold">Star Consultancy Services</span>,
+                        we believe that every successful construction project begins with the right guidance.
+                        Our consultancy service is designed to support clients at every stage — from planning
+                        and approvals to material choices and execution. With expert advice and personalized
+                        solutions, we simplify the complex process of construction for individuals, contractors,
+                        and businesses alike.
+                    </p>
+                    <!-- <p class="text-gray-400"><span class="font-bold text-gray-500">Hireandbuild</span> was started out of necessity after listening to the pain points of customer in finding a building contractor and managing the project without any quality issues, time and cost over-run. We decided to be a change, we wanted to see in the residential construction industry. </p> -->
+                </div>
+                <!-- Image -->
+                <div class="">
+                    <img src="assests/images/about image/about image3.jpg" alt="Experience" class="rounded-2xl shadow-lg w-96 ">
+                </div>
+
+
+
+            </div>
+        </div>
+    </section>
     <script>
         // Navbar Scroll Effect
-        window.addEventListener("scroll", function () {
+        window.addEventListener("scroll", function() {
             const navbar = document.querySelector("nav");
             if (window.scrollY > 50) {
                 navbar.classList.add("bg-white", "shadow", "text-black");
