@@ -13,7 +13,7 @@ const additionalServices = {
 const packages = {
   basic: {
     name: "Basic",
-    price: 2100,
+    price: 2200,
     features: [
       "RCC framed structure",
       "Basic materials",
@@ -121,7 +121,7 @@ const packages = {
   },
   standard: {
     name: "Standard",
-    price: 2299,
+    price: 2399,
     features: [
       "All features in basic package",
     ],
@@ -231,7 +231,7 @@ const packages = {
   },
   advanced: {
     name: "Premium",
-    price: 2599,
+    price: 2699,
     features: [
       "All features in standard package",
       "Granite flooring",
