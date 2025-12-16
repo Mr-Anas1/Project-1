@@ -5,7 +5,7 @@ const additionalServices = {
   carParking: 1800, // per sq ft
   sump: 25, // per litre
   recycling: 30000, // per person
-  compoundWall: 2000, // per feet
+  compoundWall: 2700, // per feet
   solar: 75000, // per KW
 };
 
