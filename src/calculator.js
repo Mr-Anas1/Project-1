@@ -2,11 +2,10 @@
 
 // Pricing for additional services
 const additionalServices = {
-  carParking: 2000, // per sq ft
+  carParking: 2100, // per sq ft
   sump: 25, // per litre
   recycling: 30000, // per person
   compoundWall: 2700, // per feet
-  solar: 75000, // per KW
 };
 
 // Package data with pricing and features
@@ -506,7 +505,6 @@ function updateCalculations() {
     parseInt(document.getElementById("recycling-range").value) || 0;
   const compoundWall =
     parseInt(document.getElementById("compound-wall").value) || 0;
-  const solar = parseInt(document.getElementById("solar-range").value) || 0;
 
   let summaryHTML = "";
   let grandTotal = 0;
@@ -600,21 +598,6 @@ function updateCalculations() {
     `;
   grandTotal += wallCost;
 
-  // Solar power cost
-  const solarCost = solar * additionalServices.solar;
-  summaryHTML += `
-        <div class="flex justify-between items-center py-2 border-b border-gray-100">
-            <div>
-                <div class="font-medium">Solar power required (optional)</div>
-                <div class="text-xs text-gray-500">${solar} x ${
-    additionalServices.solar
-  }</div>
-            </div>
-            <div class="text-right font-semibold">₹ ${solarCost.toLocaleString()}</div>
-        </div>
-    `;
-  grandTotal += solarCost;
-
   document.getElementById("summary-items").innerHTML = summaryHTML;
   document.getElementById(
     "grand-total"
@@ -671,10 +654,6 @@ document.addEventListener("DOMContentLoaded", function () {
     .addEventListener("input", function () {
       updateRangeDisplay("recycling-range", "recycling-value");
     });
-
-  document.getElementById("solar-range").addEventListener("input", function () {
-    updateRangeDisplay("solar-range", "solar-value");
-  });
 
   // Initial calculation
   updateCalculations();
