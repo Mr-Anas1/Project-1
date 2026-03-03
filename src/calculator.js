@@ -2,7 +2,7 @@
 
 // Pricing for additional services
 const additionalServices = {
-  carParking: 1800, // per sq ft
+  carParking: 2000, // per sq ft
   sump: 25, // per litre
   recycling: 30000, // per person
   compoundWall: 2700, // per feet
@@ -13,7 +13,7 @@ const additionalServices = {
 const packages = {
   basic: {
     name: "Basic",
-    price: 2200,
+    price: 2300,
     features: [
       "RCC framed structure",
       "Basic materials",
@@ -121,7 +121,7 @@ const packages = {
   },
   standard: {
     name: "Standard",
-    price: 2399,
+    price: 2499,
     features: [
       "All features in basic package",
     ],
@@ -231,7 +231,7 @@ const packages = {
   },
   advanced: {
     name: "Premium",
-    price: 2699,
+    price: 2799,
     features: [
       "All features in standard package",
       "Granite flooring",
